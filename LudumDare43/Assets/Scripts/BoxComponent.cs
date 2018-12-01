@@ -14,6 +14,12 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 
     [SerializeField]
     private Transform parentTransform;
+    [SerializeField]
+    private Material normalMaterial;
+    [SerializeField]
+    private Material highlightedMaterial;
+    [SerializeField]
+    private MeshRenderer mesh;
 
     Rigidbody rigid;
 
@@ -22,6 +28,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
+        mesh = GetComponentInChildren<MeshRenderer>();
     }
 
 	// Use this for initialization
@@ -58,5 +65,18 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     {
         this.gameObject.layer = 0;
         handler.SetGrabbedObject(null);
+    }
+
+    public void ChangeMaterial(bool outline)
+    {
+        if(outline)
+        {
+            mesh.material = highlightedMaterial;
+        }
+
+        else
+        {
+            mesh.material = normalMaterial;
+        }
     }
 }

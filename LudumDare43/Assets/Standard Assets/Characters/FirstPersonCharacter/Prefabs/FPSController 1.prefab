@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82019750795067542}
   - component: {fileID: 114476480014438324}
   - component: {fileID: 114607041508524904}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: FPSController 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 20383824665908476}
   - component: {fileID: 81920122660824744}
   - component: {fileID: 124375588815228906}
-  m_Layer: 0
+  - component: {fileID: 114297395175124014}
+  m_Layer: 2
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -59,7 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482019573132478}
   - component: {fileID: 54855418323190516}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Handler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,6 +403,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!114 &114297395175124014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577610222461992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 1}
 --- !u!114 &114476480014438324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -414,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handler: {fileID: 1647567213063870}
-  maxDistanceGrab: 10
+  maxDistanceGrab: 4
 --- !u!114 &114607041508524904
 MonoBehaviour:
   m_ObjectHideFlags: 1
