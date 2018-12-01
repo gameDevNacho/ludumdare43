@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent (typeof(Rigidbody))]
 public class BoxComponent : MonoBehaviour, IInteractable {
 
@@ -10,6 +9,8 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     public Type myType;
 
     public Product myProduct;
+
+    public AudioClip audio;
 
     [SerializeField]
     private Transform parentTransform;
@@ -32,6 +33,11 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 	void Update ()
     {
         rigid.AddForce(parentTransform.right * 10f * -parentTransform.right.y, ForceMode.Force);
+        if(rigid.angularVelocity.magnitude > 4 && !this.GetComponent<AudioSource>().isPlaying)
+        {
+            this.GetComponent<AudioSource>().clip = audio;
+            this.GetComponent<AudioSource>().Play();
+        }
     }
 
     public void Throw(HandlerComponent handler)
