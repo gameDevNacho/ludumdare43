@@ -35,12 +35,12 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 
     public void Interact(HandlerComponent handler)
     {
+        this.transform.SetPositionAndRotation(handler.GetTransform().position, handler.GetTransform().rotation);
         handler.SetGrabbedObject(this);
-        rigid.useGravity = false;
     }
 
-    public void Release()
+    public void Release(HandlerComponent handler)
     {
-        rigid.isKinematic = false;
+        handler.SetGrabbedObject(null);
     }
 }

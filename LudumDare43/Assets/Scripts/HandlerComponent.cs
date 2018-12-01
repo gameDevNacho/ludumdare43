@@ -7,7 +7,7 @@ public class HandlerComponent : MonoBehaviour {
 
     public GameObject handler;
 
-    private GameObject grabbedObject;
+    private BoxComponent grabbedObject;
 
     private FixedJoint joint;
 
@@ -33,12 +33,8 @@ public class HandlerComponent : MonoBehaviour {
         {
             if(joint == null)
             {
-                joint = this.gameObject.AddComponent<FixedJoint>();
+                joint = handler.AddComponent<FixedJoint>();
                 joint.connectedBody = grabbedObject.GetComponent<Rigidbody>();
-                if(joint.connectedBody == null)
-                {
-                    Object.Destroy(joint);
-                }
                 this.joint.connectedAnchor = grabbedObject.transform.position;
                 this.joint.enableCollision = false;
                 this.joint.anchor = this.handler.transform.position;
@@ -61,7 +57,9 @@ public class HandlerComponent : MonoBehaviour {
 
     private void Release()
     {
+        grabbedObject.Release(this);
         grabbedObject = null;
+        Destroy(joint);
     }
 
     public Transform GetTransform()
@@ -71,14 +69,14 @@ public class HandlerComponent : MonoBehaviour {
 
     public void SetGrabbedObject(BoxComponent grabbed)
     {
-        grabbedObject = grabbed.gameObject;
+        grabbedObject = grabbed;
     }
 
     public FixedJoint getJoint()
     {
         if(this.joint == null)
         {
-            this.joint = this.gameObject.AddComponent<FixedJoint>();
+            this.joint = handler.AddComponent<FixedJoint>();
             joint.transform.position = handler.transform.position;
         }
         return this.joint;
