@@ -37,6 +37,8 @@ public class PlaneManager : MonoBehaviour
     private float timeWeightProblem;
     [SerializeField]
     private float angleLost;
+    [SerializeField]
+    private EZCameraShake.CameraShaker cameraShaker;
 
     private float engineMalfunction;
 
@@ -191,5 +193,7 @@ public class PlaneManager : MonoBehaviour
         }
 
         timeForAngleProblem = Random.Range(minimumTimePerAngleProblem, maxSecondsPerAngleProblem);
+
+        cameraShaker.ShakeOnce(6f, 6f, .1f, 2f);
     }
 }
