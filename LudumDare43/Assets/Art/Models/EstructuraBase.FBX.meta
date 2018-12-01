@@ -13,6 +13,24 @@ ModelImporter:
     100014: Plane001
     100016: Line001
     100018: Object007
+    100020: aviones
+    100022: aviones 1
+    100024: aviones 2
+    100026: aviones 3
+    100028: aviones 4
+    100030: aviones 5
+    100032: aviones 6
+    100034: aviones 7
+    100036: aviones 8
+    100038: aviones 9
+    100040: Cylinder007
+    100042: Cylinder005
+    100044: Object010
+    100046: Object011
+    100048: Object012
+    100050: Object016
+    100052: Object017
+    100054: Object020
     400000: //RootNode
     400002: Box001
     400004: Box005
@@ -23,6 +41,24 @@ ModelImporter:
     400014: Plane001
     400016: Line001
     400018: Object007
+    400020: aviones
+    400022: aviones 1
+    400024: aviones 2
+    400026: aviones 3
+    400028: aviones 4
+    400030: aviones 5
+    400032: aviones 6
+    400034: aviones 7
+    400036: aviones 8
+    400038: aviones 9
+    400040: Cylinder007
+    400042: Cylinder005
+    400044: Object010
+    400046: Object011
+    400048: Object012
+    400050: Object016
+    400052: Object017
+    400054: Object020
     2100000: No Name
     2100002: materialLudum
     2300000: //RootNode
@@ -35,6 +71,24 @@ ModelImporter:
     2300014: Plane001
     2300016: Line001
     2300018: Object007
+    2300020: aviones
+    2300022: aviones 1
+    2300024: aviones 2
+    2300026: aviones 3
+    2300028: aviones 4
+    2300030: aviones 5
+    2300032: aviones 6
+    2300034: aviones 7
+    2300036: aviones 8
+    2300038: aviones 9
+    2300040: Cylinder007
+    2300042: Cylinder005
+    2300044: Object010
+    2300046: Object011
+    2300048: Object012
+    2300050: Object016
+    2300052: Object017
+    2300054: Object020
     3300000: //RootNode
     3300002: Box001
     3300004: Box005
@@ -45,6 +99,24 @@ ModelImporter:
     3300014: Plane001
     3300016: Line001
     3300018: Object007
+    3300020: aviones
+    3300022: aviones 1
+    3300024: aviones 2
+    3300026: aviones 3
+    3300028: aviones 4
+    3300030: aviones 5
+    3300032: aviones 6
+    3300034: aviones 7
+    3300036: aviones 8
+    3300038: aviones 9
+    3300040: Cylinder007
+    3300042: Cylinder005
+    3300044: Object010
+    3300046: Object011
+    3300048: Object012
+    3300050: Object016
+    3300052: Object017
+    3300054: Object020
     4300000: Estructura
     4300002: Box001
     4300004: Box005
@@ -55,6 +127,24 @@ ModelImporter:
     4300014: Cylinder003
     4300016: Line001
     4300018: Object007
+    4300020: aviones
+    4300022: aviones
+    4300024: Cylinder007
+    4300026: aviones
+    4300028: aviones
+    4300030: aviones
+    4300032: aviones
+    4300034: aviones
+    4300036: aviones
+    4300038: aviones
+    4300040: aviones
+    4300042: Object010
+    4300044: Object011
+    4300046: Cylinder005
+    4300048: Object012
+    4300050: Object016
+    4300052: Object017
+    4300054: Object020
   externalObjects: {}
   materials:
     importMaterials: 1
