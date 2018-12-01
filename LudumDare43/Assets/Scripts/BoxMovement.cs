@@ -18,19 +18,4 @@ public class BoxMovement : MonoBehaviour
     {
         myRigidbody.AddForce(parentTransform.forward * 10f * -parentTransform.forward.y, ForceMode.Force);
     }
-
-    //   Transform parent;
-    //   Rigidbody rigid;
-    //   float forceMultiplier = 100.0f;
-
-    //// Use this for initialization
-    //void Start () {
-    //       parent = this.GetComponentInParent<Transform>();
-    //       rigid = this.GetComponent<Rigidbody>();
-    //}
-
-    //// Update is called once per frame
-    //void Update () {
-    //       rigid.AddForce(parent.forward * -parent.forward.y * forceMultiplier);
-    //}
 }
