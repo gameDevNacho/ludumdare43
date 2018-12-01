@@ -65,7 +65,6 @@ public class PlaneManager : MonoBehaviour
         Instance = this;
 
         timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
-        timeForAngleProblem = Random.Range(minimumTimePerAngleProblem, maxSecondsPerAngleProblem);
     }
 
     public void CalculateWeight()
@@ -137,7 +136,7 @@ public class PlaneManager : MonoBehaviour
                 float distanceCenterToLeft = Mathf.Abs(centerPoint.InverseTransformPoint(leftPoint.position).x);
                 float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += (-(float)boxes[i].myType * (distanceCenterToBox / distanceCenterToLeft));
+                weightBalance += (-(float)boxes[i].myType * (Mathf.Clamp(distanceCenterToBox / distanceCenterToLeft, 0, 1)));
             }
 
             else if(centerPoint.InverseTransformPoint(boxes[i].transform.position).x > centerPoint.localPosition.x)
@@ -145,7 +144,7 @@ public class PlaneManager : MonoBehaviour
                 float distanceCenterToRight = Mathf.Abs(centerPoint.InverseTransformPoint(rightPoint.position).x);
                 float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += ((float)boxes[i].myType * (distanceCenterToBox / distanceCenterToRight));
+                weightBalance += ((float)boxes[i].myType * (Mathf.Clamp(distanceCenterToBox / distanceCenterToRight, 0, 1)));
             }
         }
     }

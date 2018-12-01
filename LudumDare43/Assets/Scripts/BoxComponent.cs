@@ -11,6 +11,9 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 
     public Product myProduct;
 
+    [SerializeField]
+    private Transform parentTransform;
+
     Rigidbody rigid;
 
     float speed = 10.0f;
@@ -28,7 +31,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 	// Update is called once per frame
 	void Update ()
     {
-
+        rigid.AddForce(-parentTransform.right * 10f * -parentTransform.forward.y, ForceMode.Force);
     }
 
 

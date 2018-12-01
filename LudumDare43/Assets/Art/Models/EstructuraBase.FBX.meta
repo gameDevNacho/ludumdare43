@@ -11,6 +11,8 @@ ModelImporter:
     100010: Object003
     100012: Object005
     100014: Plane001
+    100016: Line001
+    100018: Object007
     400000: //RootNode
     400002: Box001
     400004: Box005
@@ -19,6 +21,8 @@ ModelImporter:
     400010: Object003
     400012: Object005
     400014: Plane001
+    400016: Line001
+    400018: Object007
     2100000: No Name
     2100002: materialLudum
     2300000: //RootNode
@@ -29,6 +33,8 @@ ModelImporter:
     2300010: Object003
     2300012: Object005
     2300014: Plane001
+    2300016: Line001
+    2300018: Object007
     3300000: //RootNode
     3300002: Box001
     3300004: Box005
@@ -37,6 +43,8 @@ ModelImporter:
     3300010: Object003
     3300012: Object005
     3300014: Plane001
+    3300016: Line001
+    3300018: Object007
     4300000: Estructura
     4300002: Box001
     4300004: Box005
@@ -45,6 +53,8 @@ ModelImporter:
     4300010: Object005
     4300012: Plane001
     4300014: Cylinder003
+    4300016: Line001
+    4300018: Object007
   externalObjects: {}
   materials:
     importMaterials: 1
