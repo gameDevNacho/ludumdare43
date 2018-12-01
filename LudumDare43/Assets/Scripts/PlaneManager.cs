@@ -7,13 +7,6 @@ public class PlaneManager : MonoBehaviour
     public static PlaneManager Instance { get; private set; }
 
     [System.Serializable]
-    private struct Box
-    {
-        public Transform box;
-        public float weight;
-    }
-
-    [System.Serializable]
     private struct RotationVelocity
     {
         public float weight;
@@ -21,7 +14,7 @@ public class PlaneManager : MonoBehaviour
     }
 
     [SerializeField]
-    private List<Box> boxes;
+    private List<BoxComponent> boxes;
     [SerializeField]
     private Transform plane;
     [SerializeField]
@@ -32,11 +25,35 @@ public class PlaneManager : MonoBehaviour
     private Transform rightPoint;
     [SerializeField]
     private RotationVelocity maxRotationVelocity;
+    [SerializeField]
+    private float maxSecondsPerWeightProblem;
+    [SerializeField]
+    private float maxSecondsPerAngleProblem;
+    [SerializeField]
+    private float minimumTimePerWeightProblem;
+    [SerializeField]
+    private float minimumTimePerAngleProblem;
+    [SerializeField]
+    private float timeWeightProblem;
+    [SerializeField]
+    private float angleLost;
 
     private float engineMalfunction;
 
+    private bool weightProblem;
+
     private float totalWeight;
     private float weightBalance;
+
+    private float timeForWeightProblem;
+    private float timeForAngleProblem;
+
+    private float timePassedSinceWeightProblem;
+    private float timePassedSinceAngleProblem;
+
+    private float timePassedInWeightProblem;
+
+    private float weightExcess;
 
     private void Awake()
     {
@@ -46,13 +63,16 @@ public class PlaneManager : MonoBehaviour
         }
 
         Instance = this;
+
+        timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
+        timeForAngleProblem = Random.Range(minimumTimePerAngleProblem, maxSecondsPerAngleProblem);
     }
 
     public void CalculateWeight()
     {
         for (int i = 0; i < boxes.Count; i++)
         {
-            totalWeight += boxes[i].weight;
+            totalWeight += (float)boxes[i].myType;
         }
 
         engineMalfunction = 0;
@@ -62,7 +82,48 @@ public class PlaneManager : MonoBehaviour
     {
         EvaluateWeights();
 
+        if(!weightProblem)
+        {
+            timePassedSinceWeightProblem += Time.deltaTime;
+
+            if(timePassedSinceWeightProblem >= timeForWeightProblem)
+            {
+                timePassedSinceWeightProblem = 0;
+
+                StartWeightProblem();
+
+                weightProblem = true;
+            }
+        }
+
+        timePassedSinceAngleProblem += Time.deltaTime;
+
+        if (timePassedSinceAngleProblem >= timeForAngleProblem)
+        {
+            timePassedSinceAngleProblem = 0;
+
+            StartAngleProblem();
+        }
+
         RotatePlane();
+
+        if(Vector3.Angle(Vector3.up, plane.transform.up) >= angleLost)
+        {
+            Debug.Log("Has Perdido");
+        }
+
+        if(weightProblem)
+        {
+            timePassedInWeightProblem += Time.deltaTime;
+
+            if(timePassedInWeightProblem >= timeWeightProblem)
+            {
+                timePassedInWeightProblem = 0;
+                timePassedSinceWeightProblem = 0;
+                weightProblem = false;
+                Debug.Log("Has Perdido");
+            }
+        }
     }
 
     public void EvaluateWeights()
@@ -71,20 +132,20 @@ public class PlaneManager : MonoBehaviour
 
         for (int i = 0; i < boxes.Count; i++)
         {
-            if(centerPoint.InverseTransformPoint(boxes[i].box.position).x < centerPoint.localPosition.x)
+            if(centerPoint.InverseTransformPoint(boxes[i].transform.position).x < centerPoint.localPosition.x)
             {
                 float distanceCenterToLeft = Mathf.Abs(centerPoint.InverseTransformPoint(leftPoint.position).x);
-                float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].box.position).x);
+                float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += (-boxes[i].weight * (distanceCenterToBox / distanceCenterToLeft));
+                weightBalance += (-(float)boxes[i].myType * (distanceCenterToBox / distanceCenterToLeft));
             }
 
-            else if(centerPoint.InverseTransformPoint(boxes[i].box.position).x > centerPoint.localPosition.x)
+            else if(centerPoint.InverseTransformPoint(boxes[i].transform.position).x > centerPoint.localPosition.x)
             {
                 float distanceCenterToRight = Mathf.Abs(centerPoint.InverseTransformPoint(rightPoint.position).x);
-                float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].box.position).x);
+                float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += (boxes[i].weight * (distanceCenterToBox / distanceCenterToRight));
+                weightBalance += ((float)boxes[i].myType * (distanceCenterToBox / distanceCenterToRight));
             }
         }
     }
@@ -96,5 +157,40 @@ public class PlaneManager : MonoBehaviour
         float angularSpeed = Mathf.Abs(maxRotationVelocity.angularVelocity * balancedWeight / maxRotationVelocity.weight);
 
         plane.Rotate(plane.forward * angularSpeed * -Mathf.Sign(balancedWeight) * Time.deltaTime);
+    }
+
+    public void BoxThrown(BoxComponent box)
+    {
+        boxes.Remove(box);
+        weightExcess -= (float)box.myType;
+
+        if(weightExcess <= 0 && weightProblem)
+        {
+            weightProblem = false;
+            timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
+        }
+    }
+
+    private void StartWeightProblem()
+    {
+        weightExcess = Random.Range(10f, 50f);
+        Debug.Log("Start Weight");
+    }
+
+    private void StartAngleProblem()
+    {
+        int wing = Random.Range(0, 2);
+
+        if(wing == 0)
+        {
+            engineMalfunction += -(Random.Range(5f, 15f));
+        }
+
+        else if(wing == 1)
+        {
+            engineMalfunction += Random.Range(5f, 15f);
+        }
+
+        timeForAngleProblem = Random.Range(minimumTimePerAngleProblem, maxSecondsPerAngleProblem);
     }
 }
