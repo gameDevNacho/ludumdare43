@@ -243,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 5
   myProduct: {fileID: 0}
+  parentTransform: {fileID: 0}
 --- !u!54 &197382970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -626,6 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 5
   myProduct: {fileID: 0}
+  parentTransform: {fileID: 0}
 --- !u!54 &607883636
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1008,6 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 5
   myProduct: {fileID: 0}
+  parentTransform: {fileID: 0}
 --- !u!54 &953210018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1319,6 +1322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 5
   myProduct: {fileID: 0}
+  parentTransform: {fileID: 0}
 --- !u!54 &1222676597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1446,6 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 5
   myProduct: {fileID: 0}
+  parentTransform: {fileID: 0}
 --- !u!1 &1731221164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 5
   myProduct: {fileID: 0}
+  parentTransform: {fileID: 0}
 --- !u!54 &1731221167
 Rigidbody:
   m_ObjectHideFlags: 0

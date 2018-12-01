@@ -31,7 +31,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 	// Update is called once per frame
 	void Update ()
     {
-        rigid.AddForce(-parentTransform.right * 10f * -parentTransform.forward.y, ForceMode.Force);
+
     }
 
 
