@@ -65,7 +65,10 @@ public class HandlerComponent : MonoBehaviour {
     public void Throw()
     {
         if(grabbedObject != null)
+        {
+            Destroy(joint);
             grabbedObject.Throw(this);
+        }        
     }
 
     public Transform GetTransform()

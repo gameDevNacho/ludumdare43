@@ -36,18 +36,21 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 
     public void Throw(HandlerComponent handler)
     {
-        rigid.AddForce(handler.GetTransform().forward, ForceMode.Impulse);
-        Release(handler);
+        handler.SetGrabbedObject(null);
+        rigid.AddForce(handler.GetTransform().forward * 10, ForceMode.Impulse);
+        this.gameObject.layer = 0;
     }
 
     public void Interact(HandlerComponent handler)
     {
+        this.gameObject.layer = 9;
         this.transform.SetPositionAndRotation(handler.GetTransform().position, handler.GetTransform().rotation);
         handler.SetGrabbedObject(this);
     }
 
     public void Release(HandlerComponent handler)
     {
+        this.gameObject.layer = 0;
         handler.SetGrabbedObject(null);
     }
 }
