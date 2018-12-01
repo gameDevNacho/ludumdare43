@@ -8,11 +8,14 @@ public class AlarmLight : MonoBehaviour {
     public float highIntensity = 2f;
     public float lowIntensity = 0.5f;
     public float changeMargin = 0.2f;
+	public AnimationCurve curve;
 
     public bool alarmOn;
 
     private float targetIntensity;
     private Light l;
+	private float x = 0.0f;
+	public float frequency = 1.00f;
     private void Awake()
     {
         l = GetComponent<Light>();
@@ -22,10 +25,12 @@ public class AlarmLight : MonoBehaviour {
 
     private void Update()
     {
+		x = Mathf.Sin(frequency * Time.time);
+
         if (alarmOn)
         {
-			l.intensity = Mathf.Lerp(l.intensity, targetIntensity, fadeSpeed * Time.deltaTime);
-			CheckTargetIntensity();
+			l.intensity = curve.Evaluate(x);//Mathf.Lerp(l.intensity, targetIntensity, fadeSpeed * Time.deltaTime);
+			//CheckTargetIntensity();
 		}
 		else
 		{
