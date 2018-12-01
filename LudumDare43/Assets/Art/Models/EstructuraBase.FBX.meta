@@ -31,6 +31,16 @@ ModelImporter:
     100050: Object016
     100052: Object017
     100054: Object020
+    100056: Object021
+    100058: Asiento
+    100060: Estanteria
+    100062: Laterales00
+    100064: Laterales01
+    100066: Laterales02
+    100068: Laterales03
+    100070: Laterales04
+    100072: Laterales05
+    100074: Mesa
     400000: //RootNode
     400002: Box001
     400004: Box005
@@ -59,6 +69,16 @@ ModelImporter:
     400050: Object016
     400052: Object017
     400054: Object020
+    400056: Object021
+    400058: Asiento
+    400060: Estanteria
+    400062: Laterales00
+    400064: Laterales01
+    400066: Laterales02
+    400068: Laterales03
+    400070: Laterales04
+    400072: Laterales05
+    400074: Mesa
     2100000: No Name
     2100002: materialLudum
     2300000: //RootNode
@@ -89,6 +109,16 @@ ModelImporter:
     2300050: Object016
     2300052: Object017
     2300054: Object020
+    2300056: Object021
+    2300058: Asiento
+    2300060: Estanteria
+    2300062: Laterales00
+    2300064: Laterales01
+    2300066: Laterales02
+    2300068: Laterales03
+    2300070: Laterales04
+    2300072: Laterales05
+    2300074: Mesa
     3300000: //RootNode
     3300002: Box001
     3300004: Box005
@@ -117,6 +147,16 @@ ModelImporter:
     3300050: Object016
     3300052: Object017
     3300054: Object020
+    3300056: Object021
+    3300058: Asiento
+    3300060: Estanteria
+    3300062: Laterales00
+    3300064: Laterales01
+    3300066: Laterales02
+    3300068: Laterales03
+    3300070: Laterales04
+    3300072: Laterales05
+    3300074: Mesa
     4300000: Estructura
     4300002: Box001
     4300004: Box005
@@ -145,6 +185,16 @@ ModelImporter:
     4300050: Object016
     4300052: Object017
     4300054: Object020
+    4300056: Object021
+    4300058: Laterales01
+    4300060: Asiento
+    4300062: Estanteria
+    4300064: Mesa
+    4300066: Laterales04
+    4300068: Laterales03
+    4300070: Laterales02
+    4300072: Laterales00
+    4300074: Laterales05
   externalObjects: {}
   materials:
     importMaterials: 1

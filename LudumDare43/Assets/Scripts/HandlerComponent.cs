@@ -11,6 +11,8 @@ public class HandlerComponent : MonoBehaviour {
 
     private FixedJoint joint;
 
+    private BoxComponent currentFocus;
+
     [SerializeField]
     private float maxDistanceGrab = 10.0f;
 
@@ -40,7 +42,28 @@ public class HandlerComponent : MonoBehaviour {
                 this.joint.anchor = this.handler.transform.position;
             } 
         }
-    }
+
+        RaycastHit hit;
+
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistanceGrab))
+        {
+            if (currentFocus == null && hit.transform.gameObject.GetComponent<IInteractable>() != null && hit.transform.gameObject.GetComponent<IInteractable>() is BoxComponent)
+            {
+                BoxComponent box = (BoxComponent)hit.transform.gameObject.GetComponent<IInteractable>();
+                currentFocus = box;
+                currentFocus.ChangeMaterial(true);
+            }
+        }
+
+        else
+        {
+            if (currentFocus != null && currentFocus is BoxComponent)
+            {
+                currentFocus.ChangeMaterial(false);
+                currentFocus = null;
+            }
+        }
+    }    
 
     private void Pick(Ray ray)
     {
