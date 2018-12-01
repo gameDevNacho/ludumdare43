@@ -255,5 +255,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+        public Ray GetCameraRay()
+        {
+            Ray ray = new Ray(m_Camera.transform.position, m_Camera.transform.forward);
+            return ray;
+        }
     }
 }

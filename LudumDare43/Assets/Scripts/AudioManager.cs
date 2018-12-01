@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayDesiredClip(AudioClip clipToPlay)
     {
-        AudioSource sourceToUse;
+        AudioSource sourceToUse = null;
 
         for (int i = 0; i < allSources.Length; i++)
         {
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour {
             sourceToUse.clip = clipToPlay;
             sourceToUse.Play();
 
-            StartCorrutine(RemoveClip(sourceToUse, sourceToUse.clip.length));
+            StartCoroutine(RemoveClip(sourceToUse, sourceToUse.clip.length));
         }
         
     }
