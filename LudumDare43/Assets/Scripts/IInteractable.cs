@@ -5,7 +5,7 @@ public interface IInteractable
 {
     void Interact(HandlerComponent handler);
 
-    void Release();
+    void Release(HandlerComponent handler);
 }
 
 
