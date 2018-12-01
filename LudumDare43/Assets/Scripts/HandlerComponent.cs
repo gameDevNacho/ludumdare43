@@ -62,6 +62,12 @@ public class HandlerComponent : MonoBehaviour {
         Destroy(joint);
     }
 
+    public void Throw()
+    {
+        if(grabbedObject != null)
+            grabbedObject.Throw(this);
+    }
+
     public Transform GetTransform()
     {
         return handler.transform;

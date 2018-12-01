@@ -34,7 +34,11 @@ public class BoxComponent : MonoBehaviour, IInteractable {
         rigid.AddForce(parentTransform.right * 10f * -parentTransform.right.y, ForceMode.Force);
     }
 
-
+    public void Throw(HandlerComponent handler)
+    {
+        rigid.AddForce(handler.GetTransform().forward, ForceMode.Impulse);
+        Release(handler);
+    }
 
     public void Interact(HandlerComponent handler)
     {

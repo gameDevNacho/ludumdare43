@@ -29,5 +29,9 @@ public class MouseInput : MonoBehaviour {
             Ray ray = playerController.GetCameraRay();
             handler.PickRelease(ray);
         }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            handler.Throw();
+        }
 	}
 }
