@@ -12,7 +12,6 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     public Product myProduct;
 
     Rigidbody rigid;
-    HandlerComponent handler;
 
     float speed = 10.0f;
 
@@ -27,28 +26,21 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void LateUpdate()
+	void Update ()
     {
-        if(handler != null)
-        {
-            this.transform.position += (handler.GetTransform().position - this.transform.position).normalized * Time.deltaTime * speed;
-        }
+
     }
+
+
 
     public void Interact(HandlerComponent handler)
     {
-        this.handler = handler;
-        rigid.isKinematic = true;
         handler.SetGrabbedObject(this);
+        rigid.useGravity = false;
     }
 
     public void Release()
     {
-        handler = null;
         rigid.isKinematic = false;
     }
 }
