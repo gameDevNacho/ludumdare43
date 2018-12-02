@@ -72,6 +72,7 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
         this.gameObject.layer = 9;
         this.transform.SetPositionAndRotation(handler.GetTransform().position, handler.GetTransform().rotation);
         handler.SetGrabbedObject(this);
+        PlayProductSound();
     }
 
     public void Release(HandlerComponent handler)
@@ -96,8 +97,11 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
 
     public void PlayProductSound()
     {
-        //aSource.clip = myProduct.shakeSound;
-        //aSource.Play();
+        if(myProduct != null)
+        {
+            aSource.clip = myProduct.shakeSound;
+            aSource.Play();
+        }       
     }
 
     public void OnKillVolumeEnter()

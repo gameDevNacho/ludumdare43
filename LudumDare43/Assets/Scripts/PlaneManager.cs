@@ -135,6 +135,7 @@ public class PlaneManager : MonoBehaviour
                     StartWeightProblem();
 
                     weightProblem = true;
+
                 }
             }
 
