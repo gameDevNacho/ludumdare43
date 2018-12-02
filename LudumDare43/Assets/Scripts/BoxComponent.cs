@@ -22,7 +22,10 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
     private const float FORCETHROW = 20f;
 
     private bool picked = false;
+    private bool sucked = false;
     private AudioSource aSource;
+
+    private static float suckForce = 10.0f;
 
     Rigidbody rigid;
 
@@ -47,7 +50,11 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
         if(!picked && parentTransform != null)
             rigid.AddForce(parentTransform.right * 10f * -parentTransform.right.y, ForceMode.Force);
 
-        Debug.DrawRay(transform.position, transform.forward, Color.red);
+        if(sucked)
+        {
+            rigid.AddForce(Vector3.forward * suckForce, ForceMode.Acceleration);
+            rigid.AddTorque(Vector3.right * suckForce);
+        }
     }
 
     public void Throw(HandlerComponent handler)
@@ -89,12 +96,21 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
 
     public void PlayProductSound()
     {
-        aSource.clip = myProduct.shakeSound;
-        aSource.Play();
+        //aSource.clip = myProduct.shakeSound;
+        //aSource.Play();
     }
 
     public void OnKillVolumeEnter()
     {
-        PlaneManager.Instance.BoxThrown(this);
+        Destroy(gameObject);
+    }
+
+    public void AddSuccionAceleration()
+    {
+        if (!picked)
+        {
+            sucked = true;
+            PlaneManager.Instance.BoxThrown(this);
+        }       
     }
 }
