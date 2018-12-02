@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Frog
   m_EditorClassIdentifier: 
   nameText: Frog
-  price: 10
+  price: 45
   shakeSound: {fileID: 8300000, guid: ff0d3d8b7b2a42e4ab019009bbdd9159, type: 3}
   boxMesh: {fileID: 0}

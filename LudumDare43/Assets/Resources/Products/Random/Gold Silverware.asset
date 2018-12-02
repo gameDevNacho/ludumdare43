@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b149868bcb1c0a40a6a1da0ed37f98d, type: 3}
-  m_Name: Goat
+  m_Name: Gold Silverware
   m_EditorClassIdentifier: 
-  nameText: Goat
-  price: 30
-  shakeSound: {fileID: 8300000, guid: 542b31c0828a6384ca013f5a5db38bd3, type: 3}
+  nameText: Gold Silverware
+  price: 85
+  shakeSound: {fileID: 8300000, guid: 3e221c228ed25f64b8b2c7b5f2ec3fc4, type: 3}
   boxMesh: {fileID: 0}

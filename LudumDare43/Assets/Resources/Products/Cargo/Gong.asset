@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Gong
   m_EditorClassIdentifier: 
   nameText: Gong
-  price: 10
+  price: 60
   shakeSound: {fileID: 8300000, guid: a27c280e38acffb44baab2601363eb19, type: 3}
   boxMesh: {fileID: 0}

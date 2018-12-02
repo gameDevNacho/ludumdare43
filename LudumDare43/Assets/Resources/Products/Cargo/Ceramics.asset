@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Ceramics
   m_EditorClassIdentifier: 
   nameText: Ceramics
-  price: 10
+  price: 45
   shakeSound: {fileID: 8300000, guid: d3b09125ee4d0034a9f21b61b68a0bf1, type: 3}
   boxMesh: {fileID: 0}

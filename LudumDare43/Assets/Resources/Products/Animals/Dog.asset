@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Dog
   m_EditorClassIdentifier: 
   nameText: Dog
-  price: 10
+  price: 25
   shakeSound: {fileID: 8300000, guid: 8685239d92cbe844397ebab38d1f66c6, type: 3}
   boxMesh: {fileID: 0}

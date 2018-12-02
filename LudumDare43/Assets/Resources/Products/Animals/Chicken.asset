@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Chicken
   m_EditorClassIdentifier: 
   nameText: Chicken
-  price: 10
+  price: 50
   shakeSound: {fileID: 8300000, guid: 31f986d9b2cb1a14fb7d98dc733ab6ee, type: 3}
   boxMesh: {fileID: 0}

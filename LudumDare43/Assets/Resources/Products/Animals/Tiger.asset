@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Tiger
   m_EditorClassIdentifier: 
   nameText: Tiger
-  price: 10
+  price: 75
   shakeSound: {fileID: 8300000, guid: fadd763f7f6f48c4f9bd0977b8cf7752, type: 3}
   boxMesh: {fileID: 0}
