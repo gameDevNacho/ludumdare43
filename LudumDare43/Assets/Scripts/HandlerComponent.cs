@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class HandlerComponent : MonoBehaviour {
 
     public GameObject handler;
+
+    public FirstPersonController fpc;
 
     private BoxComponent grabbedObject;
 
@@ -84,6 +87,7 @@ public class HandlerComponent : MonoBehaviour {
             {
                 hit.transform.gameObject.GetComponent<IInteractable>().Interact(this);
             }
+            fpc.setSpeed(2.5f, 2.5f);
         }
     }
 
@@ -93,6 +97,7 @@ public class HandlerComponent : MonoBehaviour {
         grabbedObject = null;
         currentFocus = null;
         Destroy(joint);
+        fpc.setSpeed(5f, 10.0f);
     }
 
     public void Throw()
@@ -101,6 +106,7 @@ public class HandlerComponent : MonoBehaviour {
         {
             Destroy(joint);
             grabbedObject.Throw(this);
+            fpc.setSpeed(5f, 10.0f);
         }        
     }
 

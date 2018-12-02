@@ -5,9 +5,9 @@
 [RequireComponent(typeof(MeshRenderer))]
 public class BoxComponent : MonoBehaviour, IInteractable {
 
-    public enum Type { Small = 5, Medium = 10, Large = 20 };
+    public enum BoxSize { Small = 5, Medium = 10, Large = 20 };
 
-    public Type myType;
+    public BoxSize mySize;
 
     public Product myProduct;
 
@@ -20,6 +20,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     [SerializeField]
     private MeshRenderer mesh;
 
+    private bool picked = false;
     private AudioSource aSource;
 
     Rigidbody rigid;
@@ -33,29 +34,33 @@ public class BoxComponent : MonoBehaviour, IInteractable {
         aSource = GetComponent<AudioSource>();
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public void InitializeBox(BoxProductSelector.Str_BoxProduct boxProduct)
+    {
+        myProduct = boxProduct.product;
+        this.GetComponentInChildren<MeshFilter>().mesh = boxProduct.boxMesh;
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        rigid.AddForce(parentTransform.right * 10f * -parentTransform.right.y, ForceMode.Force);
+        if(!picked && parentTransform != null)
+            rigid.AddForce(parentTransform.right * 10f * -parentTransform.right.y, ForceMode.Force);
 
         Debug.DrawRay(transform.position, transform.forward, Color.red);
     }
 
     public void Throw(HandlerComponent handler)
     {
+        picked = false;
         handler.SetGrabbedObject(null);
-        rigid.AddForce(handler.GetTransform().forward * 10, ForceMode.Impulse);
+        rigid.AddForce(handler.GetTransform().forward * 500, ForceMode.Impulse);
         this.gameObject.layer = 11;
         PlayProductSound();
     }
 
     public void Interact(HandlerComponent handler)
     {
+        picked = true;
         this.gameObject.layer = 9;
         this.transform.SetPositionAndRotation(handler.GetTransform().position, handler.GetTransform().rotation);
         handler.SetGrabbedObject(this);
@@ -63,7 +68,8 @@ public class BoxComponent : MonoBehaviour, IInteractable {
 
     public void Release(HandlerComponent handler)
     {
-        this.gameObject.layer =11;
+        picked = false;
+        this.gameObject.layer = 11;
         handler.SetGrabbedObject(null);
     }
 
