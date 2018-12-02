@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Cans
   m_EditorClassIdentifier: 
   nameText: Cans
-  price: 10
+  price: 15
   shakeSound: {fileID: 8300000, guid: 6bff14ab5ef53a24a8491a1f1847725e, type: 3}
   boxMesh: {fileID: 0}

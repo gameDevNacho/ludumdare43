@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Coins
   m_EditorClassIdentifier: 
   nameText: Coins
-  price: 10
+  price: 25
   shakeSound: {fileID: 8300000, guid: 21706e800e639e847861b0fe786197c0, type: 3}
   boxMesh: {fileID: 0}

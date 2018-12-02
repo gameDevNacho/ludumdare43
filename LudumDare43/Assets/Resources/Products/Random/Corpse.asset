@@ -9,8 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b149868bcb1c0a40a6a1da0ed37f98d, type: 3}
-  m_Name: Frog
+  m_Name: Corpse
   m_EditorClassIdentifier: 
-  nameText: Frog
-  price: 50
-  shakeSound: {fileID: 8300000, guid: ff0d3d8b7b2a42e4ab019009bbdd9159, type: 3}
+  nameText: Holy corpse
+  price: 130
+  shakeSound: {fileID: 8300000, guid: ddbd068fee6808348ab63cc5f67d3e28, type: 3}
+  boxMesh: {fileID: 0}

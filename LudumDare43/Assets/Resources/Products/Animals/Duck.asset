@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b149868bcb1c0a40a6a1da0ed37f98d, type: 3}
   m_Name: Duck
   m_EditorClassIdentifier: 
-  nameText: Duck
-  price: 10
+  nameText: Golden Duck
+  price: 100
   shakeSound: {fileID: 8300000, guid: fcd06a24217aba14e96930ada25b7cb9, type: 3}
   boxMesh: {fileID: 0}

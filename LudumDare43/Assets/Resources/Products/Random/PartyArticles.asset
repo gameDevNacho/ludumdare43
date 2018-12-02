@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: PartyArticles
   m_EditorClassIdentifier: 
   nameText: Party Articles
-  price: 10
+  price: 30
   shakeSound: {fileID: 8300000, guid: 3e221c228ed25f64b8b2c7b5f2ec3fc4, type: 3}
   boxMesh: {fileID: 0}

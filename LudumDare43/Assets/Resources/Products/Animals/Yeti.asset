@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b149868bcb1c0a40a6a1da0ed37f98d, type: 3}
   m_Name: Yeti
   m_EditorClassIdentifier: 
-  nameText: Yeti
-  price: 10
+  nameText: Young Yeti
+  price: 150
   shakeSound: {fileID: 8300000, guid: 3deb87b4dfe69c94aba3711d1b8890b9, type: 3}
   boxMesh: {fileID: 0}

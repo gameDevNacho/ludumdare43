@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Crickets
   m_EditorClassIdentifier: 
   nameText: Crickets
-  price: 10
+  price: 15
   shakeSound: {fileID: 8300000, guid: ad89c6f2d9c655741a80db4d38d90384, type: 3}
   boxMesh: {fileID: 0}

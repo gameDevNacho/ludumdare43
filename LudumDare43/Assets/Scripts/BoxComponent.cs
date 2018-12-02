@@ -4,7 +4,7 @@
 [RequireComponent (typeof(Rigidbody))]
 public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
 
-    public enum BoxSize { Small = 5, Medium = 10, Large = 20 };
+    public enum BoxSize { Small = 3, Medium = 6, Large = 12 };
 
     public BoxSize mySize;
 

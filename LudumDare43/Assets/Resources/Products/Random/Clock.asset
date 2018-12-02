@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: Clock
   m_EditorClassIdentifier: 
   nameText: Clock
-  price: 10
+  price: 60
   shakeSound: {fileID: 8300000, guid: 48082a5f35aa6254bb17e58244b0d635, type: 3}
   boxMesh: {fileID: 0}
