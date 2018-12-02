@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 298dde56201f27b44b4ce32796b614b2,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -167,7 +168,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 173857846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.6436524, y: -10.9, z: -46.04}
+  m_LocalPosition: {x: -4.6436524, y: 1.4, z: -46.04}
   m_LocalScale: {x: 96.27423, y: 6.6624703, z: 167.44295}
   m_Children: []
   m_Father: {fileID: 658513587}
@@ -617,7 +618,6 @@ GameObject:
   m_Component:
   - component: {fileID: 452093053}
   - component: {fileID: 452093052}
-  - component: {fileID: 452093051}
   m_Layer: 0
   m_Name: LoseCamera
   m_TagString: Untagged
@@ -625,13 +625,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &452093051
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 452093050}
-  m_Enabled: 1
 --- !u!20 &452093052
 Camera:
   m_ObjectHideFlags: 0
@@ -1398,7 +1391,17 @@ Prefab:
     - target: {fileID: 114584153179518734, guid: 6863d91f8425d224ebfaa85d7632df19,
         type: 2}
       propertyPath: timePerGame
-      value: 10
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114584153179518734, guid: 6863d91f8425d224ebfaa85d7632df19,
+        type: 2}
+      propertyPath: angleLost
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114584153179518734, guid: 6863d91f8425d224ebfaa85d7632df19,
+        type: 2}
+      propertyPath: maxRotationVelocity.angularVelocity
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6863d91f8425d224ebfaa85d7632df19, type: 2}
