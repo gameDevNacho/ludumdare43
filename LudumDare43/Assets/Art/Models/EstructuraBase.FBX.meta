@@ -41,6 +41,15 @@ ModelImporter:
     100070: Laterales04
     100072: Laterales05
     100074: Mesa
+    100076: bandolera
+    100078: cactus
+    100080: CajaTapa1
+    100082: Calaveradecristal
+    100084: mapa
+    100086: red
+    100088: sacos
+    100090: SM_Item_Pouch_Attachment_01
+    100092: SM_Item_Roll_Attachment_01
     400000: //RootNode
     400002: Box001
     400004: Box005
@@ -79,6 +88,15 @@ ModelImporter:
     400070: Laterales04
     400072: Laterales05
     400074: Mesa
+    400076: bandolera
+    400078: cactus
+    400080: CajaTapa1
+    400082: Calaveradecristal
+    400084: mapa
+    400086: red
+    400088: sacos
+    400090: SM_Item_Pouch_Attachment_01
+    400092: SM_Item_Roll_Attachment_01
     2100000: No Name
     2100002: materialLudum
     2300000: //RootNode
@@ -119,6 +137,15 @@ ModelImporter:
     2300070: Laterales04
     2300072: Laterales05
     2300074: Mesa
+    2300076: bandolera
+    2300078: cactus
+    2300080: CajaTapa1
+    2300082: Calaveradecristal
+    2300084: mapa
+    2300086: red
+    2300088: sacos
+    2300090: SM_Item_Pouch_Attachment_01
+    2300092: SM_Item_Roll_Attachment_01
     3300000: //RootNode
     3300002: Box001
     3300004: Box005
@@ -157,6 +184,15 @@ ModelImporter:
     3300070: Laterales04
     3300072: Laterales05
     3300074: Mesa
+    3300076: bandolera
+    3300078: cactus
+    3300080: CajaTapa1
+    3300082: Calaveradecristal
+    3300084: mapa
+    3300086: red
+    3300088: sacos
+    3300090: SM_Item_Pouch_Attachment_01
+    3300092: SM_Item_Roll_Attachment_01
     4300000: Estructura
     4300002: Box001
     4300004: Box005
@@ -195,6 +231,15 @@ ModelImporter:
     4300070: Laterales02
     4300072: Laterales00
     4300074: Laterales05
+    4300076: red
+    4300078: mapa
+    4300080: SM_Item_Pouch_Attachment_01
+    4300082: bandolera
+    4300084: SM_Item_Roll_Attachment_01
+    4300086: Calaveradecristal
+    4300088: sacos
+    4300090: cactus
+    4300092: CajaTapa1
   externalObjects: {}
   materials:
     importMaterials: 0

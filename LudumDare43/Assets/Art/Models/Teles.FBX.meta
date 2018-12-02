@@ -67,6 +67,7 @@ ModelImporter:
     2300034: sacos
     2300036: SM_Item_Pouch_Attachment_01
     2300038: SM_Item_Roll_Attachment_01
+    2300040: //RootNode
     3300000: Asiento
     3300002: aviones
     3300004: bandolera
@@ -87,6 +88,7 @@ ModelImporter:
     3300034: sacos
     3300036: SM_Item_Pouch_Attachment_01
     3300038: SM_Item_Roll_Attachment_01
+    3300040: //RootNode
     4300000: aviones
     4300002: Laterales01
     4300004: Asiento
@@ -109,7 +111,7 @@ ModelImporter:
     4300038: Object001
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -165,7 +167,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
