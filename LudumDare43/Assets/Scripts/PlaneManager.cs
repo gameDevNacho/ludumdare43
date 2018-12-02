@@ -37,6 +37,10 @@ public class PlaneManager : MonoBehaviour
     private float timeWeightProblem;
     [SerializeField]
     private float angleLost;
+    [SerializeField]
+    private ScreenEvents screenEvents;
+    [SerializeField]
+    private float angleAlarm;
 
     private float engineMalfunction;
 
@@ -55,6 +59,9 @@ public class PlaneManager : MonoBehaviour
 
     private float weightExcess;
 
+
+    private bool moreThanXAngle;
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -65,6 +72,7 @@ public class PlaneManager : MonoBehaviour
         Instance = this;
 
         timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
+        moreThanXAngle = false;
     }
 
     public void CalculateWeight()
@@ -109,6 +117,18 @@ public class PlaneManager : MonoBehaviour
         if(Vector3.Angle(Vector3.up, plane.transform.up) >= angleLost)
         {
             Debug.Log("Has Perdido");
+        }
+
+        if(Vector3.Angle(Vector3.up, plane.transform.up) >= angleAlarm && !moreThanXAngle)
+        {
+            screenEvents.SetRotationAlarm(ScreenEvents.State.On);
+            moreThanXAngle = true;
+        }
+
+        else if(Vector3.Angle(Vector3.up, plane.transform.up) < angleAlarm && moreThanXAngle)
+        {
+            screenEvents.SetRotationAlarm(ScreenEvents.State.Solution);
+            moreThanXAngle = false;
         }
 
         if(weightProblem)
@@ -167,13 +187,15 @@ public class PlaneManager : MonoBehaviour
         {
             weightProblem = false;
             timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
+
+            screenEvents.SetKGAlarm(ScreenEvents.State.Solution);
         }
     }
 
     private void StartWeightProblem()
     {
         weightExcess = Random.Range(10f, 50f);
-        Debug.Log("Start Weight");
+        screenEvents.SetKGAlarm(ScreenEvents.State.On);
     }
 
     private void StartAngleProblem()
