@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e39c45af130c4246a5d7e34da66fc31
+guid: 68c22aabff6b1b54c978966d4ce49338
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: materialLudum
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Box001
+    4300000: sacos
   externalObjects: {}
   materials:
     importMaterials: 0
