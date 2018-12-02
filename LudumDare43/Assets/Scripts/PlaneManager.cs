@@ -63,8 +63,9 @@ public class PlaneManager : MonoBehaviour
 
     private float weightExcess;
 
-
     private bool moreThanXAngle;
+
+    private bool gameOver;
 
     private void Awake()
     {
@@ -78,6 +79,8 @@ public class PlaneManager : MonoBehaviour
         timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
         moreThanXAngle = false;
         timePassed = 0;
+
+        gameOver = false;
     }
 
     public void CalculateWeight()
@@ -92,69 +95,73 @@ public class PlaneManager : MonoBehaviour
 
     private void Update()
     {
-        timePassed += Time.deltaTime;
-
-        if(timePassed >= timePerGame)
+        if(!gameOver)
         {
-            Debug.Log("Partida Terminada");
-        }
+            timePassed += Time.deltaTime;
 
-        EvaluateWeights();
-
-        if(!weightProblem)
-        {
-            timePassedSinceWeightProblem += Time.deltaTime;
-
-            if(timePassedSinceWeightProblem >= timeForWeightProblem)
+            if (timePassed >= timePerGame)
             {
-                timePassedSinceWeightProblem = 0;
-
-                StartWeightProblem();
-
-                weightProblem = true;
+                gameOver = true;
             }
-        }
 
-        timePassedSinceAngleProblem += Time.deltaTime;
+            EvaluateWeights();
 
-        if (timePassedSinceAngleProblem >= timeForAngleProblem)
-        {
-            timePassedSinceAngleProblem = 0;
-
-            StartAngleProblem();
-        }
-
-        RotatePlane();
-
-        if(Vector3.Angle(Vector3.up, plane.transform.forward) >= angleLost)
-        {
-            Debug.Log("Has Perdido");
-        }
-
-        if(Vector3.Angle(Vector3.up, plane.transform.forward) >= angleAlarm && !moreThanXAngle)
-        {
-            screenEvents.SetRotationAlarm(ScreenEvents.State.On);
-            moreThanXAngle = true;
-        }
-
-        else if(Vector3.Angle(Vector3.up, plane.transform.forward) < angleAlarm && moreThanXAngle)
-        {
-            screenEvents.SetRotationAlarm(ScreenEvents.State.Solution);
-            moreThanXAngle = false;
-        }
-
-        if(weightProblem)
-        {
-            timePassedInWeightProblem += Time.deltaTime;
-
-            if(timePassedInWeightProblem >= timeWeightProblem)
+            if (!weightProblem)
             {
-                timePassedInWeightProblem = 0;
-                timePassedSinceWeightProblem = 0;
-                weightProblem = false;
+                timePassedSinceWeightProblem += Time.deltaTime;
+
+                if (timePassedSinceWeightProblem >= timeForWeightProblem)
+                {
+                    timePassedSinceWeightProblem = 0;
+
+                    StartWeightProblem();
+
+                    weightProblem = true;
+                }
+            }
+
+            timePassedSinceAngleProblem += Time.deltaTime;
+
+            if (timePassedSinceAngleProblem >= timeForAngleProblem)
+            {
+                timePassedSinceAngleProblem = 0;
+
+                StartAngleProblem();
+            }
+
+            RotatePlane();
+
+            if (Vector3.Angle(Vector3.up, plane.transform.forward) >= angleLost)
+            {
                 Debug.Log("Has Perdido");
             }
+
+            if (Vector3.Angle(Vector3.up, plane.transform.forward) >= angleAlarm && !moreThanXAngle)
+            {
+                screenEvents.SetRotationAlarm(ScreenEvents.State.On);
+                moreThanXAngle = true;
+            }
+
+            else if (Vector3.Angle(Vector3.up, plane.transform.forward) < angleAlarm && moreThanXAngle)
+            {
+                screenEvents.SetRotationAlarm(ScreenEvents.State.Solution);
+                moreThanXAngle = false;
+            }
+
+            if (weightProblem)
+            {
+                timePassedInWeightProblem += Time.deltaTime;
+
+                if (timePassedInWeightProblem >= timeWeightProblem)
+                {
+                    timePassedInWeightProblem = 0;
+                    timePassedSinceWeightProblem = 0;
+                    weightProblem = false;
+                    Debug.Log("Has Perdido");
+                }
+            }
         }
+        
     }
 
     public void EvaluateWeights()
