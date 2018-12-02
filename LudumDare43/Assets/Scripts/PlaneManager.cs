@@ -114,12 +114,10 @@ public class PlaneManager : MonoBehaviour
 
         RotatePlane();
 
-        if(Vector3.Angle(Vector3.up, plane.transform.up) >= angleLost)
+        if(Vector3.Angle(Vector3.up, plane.transform.forward) >= angleLost)
         {
             Debug.Log("Has Perdido");
         }
-
-        Debug.Log(Vector3.Angle(Vector3.up, plane.transform.forward));
 
         if(Vector3.Angle(Vector3.up, plane.transform.forward) >= angleAlarm && !moreThanXAngle)
         {
@@ -158,7 +156,7 @@ public class PlaneManager : MonoBehaviour
                 float distanceCenterToLeft = Mathf.Abs(centerPoint.InverseTransformPoint(leftPoint.position).x);
                 float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += (-(float)boxes[i].mySize * (Mathf.Clamp(distanceCenterToBox / distanceCenterToLeft, 0, 1)));
+                weightBalance += ((float)boxes[i].mySize * (Mathf.Clamp(distanceCenterToBox / distanceCenterToLeft, 0, 1)));
             }
 
             else if(centerPoint.InverseTransformPoint(boxes[i].transform.position).x > centerPoint.localPosition.x)
@@ -166,7 +164,7 @@ public class PlaneManager : MonoBehaviour
                 float distanceCenterToRight = Mathf.Abs(centerPoint.InverseTransformPoint(rightPoint.position).x);
                 float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += ((float)boxes[i].mySize * (Mathf.Clamp(distanceCenterToBox / distanceCenterToRight, 0, 1)));
+                weightBalance += (-(float)boxes[i].mySize * (Mathf.Clamp(distanceCenterToBox / distanceCenterToRight, 0, 1)));
             }
         }
     }
