@@ -59,6 +59,7 @@ ENDCG
 		ENDCG
 
 		Pass {
+			Blend SrcAlpha OneMinusSrcAlpha
 			Name "OUTLINE"
 			Tags { "Queue" = "Transparent" "IgnoreProjector" = "True"}
 			Cull Front

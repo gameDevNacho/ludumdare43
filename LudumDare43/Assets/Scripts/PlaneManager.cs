@@ -41,6 +41,10 @@ public class PlaneManager : MonoBehaviour
     private ScreenEvents screenEvents;
     [SerializeField]
     private float angleAlarm;
+    [SerializeField]
+    private float timePerGame;
+
+    private float timePassed;
 
     private float engineMalfunction;
 
@@ -73,6 +77,7 @@ public class PlaneManager : MonoBehaviour
 
         timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
         moreThanXAngle = false;
+        timePassed = 0;
     }
 
     public void CalculateWeight()
@@ -87,6 +92,13 @@ public class PlaneManager : MonoBehaviour
 
     private void Update()
     {
+        timePassed += Time.deltaTime;
+
+        if(timePassed >= timePerGame)
+        {
+            Debug.Log("Partida Terminada");
+        }
+
         EvaluateWeights();
 
         if(!weightProblem)
@@ -174,8 +186,6 @@ public class PlaneManager : MonoBehaviour
         float balancedWeight = engineMalfunction + weightBalance;
 
         float angularSpeed = Mathf.Abs(maxRotationVelocity.angularVelocity * balancedWeight / maxRotationVelocity.weight);
-
-        Debug.Log(balancedWeight);
 
         plane.Rotate(plane.forward * angularSpeed * -Mathf.Sign(balancedWeight) * Time.deltaTime);
     }
