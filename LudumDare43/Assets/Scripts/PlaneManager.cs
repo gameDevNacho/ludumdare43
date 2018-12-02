@@ -71,7 +71,7 @@ public class PlaneManager : MonoBehaviour
     {
         for (int i = 0; i < boxes.Count; i++)
         {
-            totalWeight += (float)boxes[i].myType;
+            totalWeight += (float)boxes[i].mySize;
         }
 
         engineMalfunction = 0;
@@ -136,7 +136,7 @@ public class PlaneManager : MonoBehaviour
                 float distanceCenterToLeft = Mathf.Abs(centerPoint.InverseTransformPoint(leftPoint.position).x);
                 float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += (-(float)boxes[i].myType * (Mathf.Clamp(distanceCenterToBox / distanceCenterToLeft, 0, 1)));
+                weightBalance += (-(float)boxes[i].mySize * (Mathf.Clamp(distanceCenterToBox / distanceCenterToLeft, 0, 1)));
             }
 
             else if(centerPoint.InverseTransformPoint(boxes[i].transform.position).x > centerPoint.localPosition.x)
@@ -144,7 +144,7 @@ public class PlaneManager : MonoBehaviour
                 float distanceCenterToRight = Mathf.Abs(centerPoint.InverseTransformPoint(rightPoint.position).x);
                 float distanceCenterToBox = Mathf.Abs(centerPoint.InverseTransformPoint(boxes[i].transform.position).x);
 
-                weightBalance += ((float)boxes[i].myType * (Mathf.Clamp(distanceCenterToBox / distanceCenterToRight, 0, 1)));
+                weightBalance += ((float)boxes[i].mySize * (Mathf.Clamp(distanceCenterToBox / distanceCenterToRight, 0, 1)));
             }
         }
     }
@@ -161,7 +161,7 @@ public class PlaneManager : MonoBehaviour
     public void BoxThrown(BoxComponent box)
     {
         boxes.Remove(box);
-        weightExcess -= (float)box.myType;
+        weightExcess -= (float)box.mySize;
 
         if(weightExcess <= 0 && weightProblem)
         {

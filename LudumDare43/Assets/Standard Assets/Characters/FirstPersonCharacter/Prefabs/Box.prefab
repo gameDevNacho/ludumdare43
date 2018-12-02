@@ -249,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a596d7cb077a4419b614c92802834e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myType: 5
-  myProduct: {fileID: 11400000, guid: dcf75e5284a5b074aac4b0146879557c, type: 2}
+  mySize: 5
+  myProduct: {fileID: 0}
   parentTransform: {fileID: 0}
   normalMaterial: {fileID: 2100000, guid: 4e79c652a8245d44092dd158fa18e16a, type: 2}
   highlightedMaterial: {fileID: 2100000, guid: 5017549b0a5868a428ff997ac33d2ac3, type: 2}
