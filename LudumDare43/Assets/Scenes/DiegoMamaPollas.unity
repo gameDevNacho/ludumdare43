@@ -1808,6 +1808,41 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114574383807185658, guid: 046a2976414e0164ba762f8b52a78dc1,
+        type: 2}
+      propertyPath: m_MinWidth
+      value: 760
+      objectReference: {fileID: 0}
+    - target: {fileID: 114574383807185658, guid: 046a2976414e0164ba762f8b52a78dc1,
+        type: 2}
+      propertyPath: m_MinHeight
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444500817010592, guid: 046a2976414e0164ba762f8b52a78dc1,
+        type: 2}
+      propertyPath: m_MinHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444500817010592, guid: 046a2976414e0164ba762f8b52a78dc1,
+        type: 2}
+      propertyPath: m_PreferredWidth
+      value: 760
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444500817010592, guid: 046a2976414e0164ba762f8b52a78dc1,
+        type: 2}
+      propertyPath: m_PreferredHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444500817010592, guid: 046a2976414e0164ba762f8b52a78dc1,
+        type: 2}
+      propertyPath: m_FlexibleWidth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444500817010592, guid: 046a2976414e0164ba762f8b52a78dc1,
+        type: 2}
+      propertyPath: m_FlexibleHeight
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 046a2976414e0164ba762f8b52a78dc1, type: 2}
   m_IsPrefabAsset: 0
