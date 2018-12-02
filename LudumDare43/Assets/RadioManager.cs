@@ -7,11 +7,13 @@ public class RadioManager : MonoBehaviour
 	public AudioClip[] allmusic;
 
 	private AudioSource source;
-	private int currentSongIndex = 0;
+	private int currentSongIndex;
 	private int indexLimit;
 
 	private void Start()
 	{
+		currentSongIndex = Random.Range(0, allmusic.Length-1);
+
 		source = GetComponent<AudioSource>();
 		source.clip = allmusic[currentSongIndex];
 		source.Play();
