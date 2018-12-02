@@ -2,7 +2,6 @@
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent (typeof(Rigidbody))]
-[RequireComponent(typeof(MeshRenderer))]
 public class BoxComponent : MonoBehaviour, IInteractable {
 
     public enum BoxSize { Small = 5, Medium = 10, Large = 20 };
@@ -18,7 +17,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     [SerializeField]
     private Material highlightedMaterial;
     [SerializeField]
-    private MeshRenderer mesh;
+    private MeshRenderer meshMaterial;
 
     private bool picked = false;
     private AudioSource aSource;
@@ -30,7 +29,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        mesh = GetComponentInChildren<MeshRenderer>();
+        meshMaterial = GetComponentInChildren<MeshRenderer>();
         aSource = GetComponent<AudioSource>();
     }
 
@@ -53,7 +52,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     {
         picked = false;
         handler.SetGrabbedObject(null);
-        rigid.AddForce(handler.GetTransform().forward * 500, ForceMode.Impulse);
+        rigid.AddForce(handler.GetTransform().forward * 10, ForceMode.Impulse);
         this.gameObject.layer = 11;
         PlayProductSound();
     }
@@ -77,12 +76,12 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     {
         if(outline)
         {
-            mesh.material = highlightedMaterial;
+            meshMaterial.material = highlightedMaterial;
         }
 
         else
         {
-            mesh.material = normalMaterial;
+            meshMaterial.material = normalMaterial;
         }
     }
 

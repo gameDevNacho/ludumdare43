@@ -52,7 +52,7 @@ public class HandlerComponent : MonoBehaviour {
 
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.red);
 
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistanceGrab))
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward * maxDistanceGrab, out hit, maxDistanceGrab))
         {
             if (currentFocus == null && hit.transform.gameObject.GetComponent<IInteractable>() != null && hit.transform.gameObject.GetComponent<IInteractable>() is BoxComponent)
             {
@@ -64,6 +64,13 @@ public class HandlerComponent : MonoBehaviour {
             if(currentFocus != null && currentFocus == grabbedObject)
             {
                 currentFocus.ChangeMaterial(false);
+            }
+
+            if(currentFocus != null && hit.transform.gameObject.GetComponent<BoxComponent>() != null && currentFocus != hit.transform.gameObject.GetComponent<BoxComponent>())
+            {
+                currentFocus.ChangeMaterial(false);
+                currentFocus = hit.transform.gameObject.GetComponent<BoxComponent>();
+                currentFocus.ChangeMaterial(true);
             }
         }
 
