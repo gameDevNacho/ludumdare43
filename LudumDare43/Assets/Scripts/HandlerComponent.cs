@@ -123,4 +123,12 @@ public class HandlerComponent : MonoBehaviour {
         }
         return this.joint;
     }
+
+    public void ShakeBox()
+    {
+        if(grabbedObject != null)
+        {
+            grabbedObject.PlayProductSound();
+        }
+    }
 }
