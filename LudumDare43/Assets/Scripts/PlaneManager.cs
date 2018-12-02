@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlaneManager : MonoBehaviour
 {
@@ -150,7 +151,7 @@ public class PlaneManager : MonoBehaviour
 
             if (Vector3.Angle(Vector3.up, plane.transform.forward) >= angleLost)
             {
-                Debug.Log("Has Perdido");
+                SceneManager.LoadScene("Main");
             }
 
             if (Vector3.Angle(Vector3.up, plane.transform.forward) >= angleAlarm && !moreThanXAngle)
@@ -174,7 +175,7 @@ public class PlaneManager : MonoBehaviour
                     timePassedInWeightProblem = 0;
                     timePassedSinceWeightProblem = 0;
                     weightProblem = false;
-                    Debug.Log("Has Perdido");
+                    SceneManager.LoadScene("Main");
                 }
             }
         }
@@ -218,6 +219,8 @@ public class PlaneManager : MonoBehaviour
     {
         boxes.Remove(box);
         weightExcess -= (float)box.mySize;
+
+        Debug.Log(weightExcess);
 
         if(weightExcess <= 0 && weightProblem)
         {
