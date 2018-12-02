@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-[RequireComponent(typeof(FirstPersonController))]
-[RequireComponent (typeof(HandlerComponent))]
 public class MouseInput : MonoBehaviour {
 
     private HandlerComponent handler;
@@ -24,13 +22,9 @@ public class MouseInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Ray rayDebug = playerController.GetCameraRay();
-        Debug.DrawRay(rayDebug.origin, rayDebug.direction);
-
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = playerController.GetCameraRay();
-            Debug.DrawRay(ray.origin, ray.direction);
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
             handler.PickRelease(ray);
         }
         else if (Input.GetMouseButtonDown(1))

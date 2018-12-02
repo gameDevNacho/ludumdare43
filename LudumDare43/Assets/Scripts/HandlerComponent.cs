@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class HandlerComponent : MonoBehaviour {
 
     public GameObject handler;
@@ -13,6 +12,9 @@ public class HandlerComponent : MonoBehaviour {
 
     private BoxComponent currentFocus;
 
+
+    [SerializeField]
+    private Transform shootingPoint;
     [SerializeField]
     private float maxDistanceGrab = 10.0f;
 
@@ -45,6 +47,8 @@ public class HandlerComponent : MonoBehaviour {
 
         RaycastHit hit;
 
+        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.red);
+
         if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistanceGrab))
         {
             if (currentFocus == null && hit.transform.gameObject.GetComponent<IInteractable>() != null && hit.transform.gameObject.GetComponent<IInteractable>() is BoxComponent)
@@ -52,6 +56,11 @@ public class HandlerComponent : MonoBehaviour {
                 BoxComponent box = (BoxComponent)hit.transform.gameObject.GetComponent<IInteractable>();
                 currentFocus = box;
                 currentFocus.ChangeMaterial(true);
+            }
+
+            if(currentFocus != null && currentFocus == grabbedObject)
+            {
+                currentFocus.ChangeMaterial(false);
             }
         }
 
@@ -82,6 +91,7 @@ public class HandlerComponent : MonoBehaviour {
     {
         grabbedObject.Release(this);
         grabbedObject = null;
+        currentFocus = null;
         Destroy(joint);
     }
 

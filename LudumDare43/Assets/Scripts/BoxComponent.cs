@@ -45,6 +45,8 @@ public class BoxComponent : MonoBehaviour, IInteractable {
             this.GetComponent<AudioSource>().clip = audio;
             this.GetComponent<AudioSource>().Play();
         }
+
+        Debug.DrawRay(transform.position, transform.forward, Color.red);
     }
 
     public void Throw(HandlerComponent handler)
