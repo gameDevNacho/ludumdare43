@@ -25,31 +25,31 @@ public class AlarmLight : MonoBehaviour {
 
     private void Update()
     {
-		x = Mathf.Sin(frequency * Time.time);
+        x = (Mathf.Sin(frequency * Time.time) + 1) * 0.5f;
 
         if (alarmOn)
         {
-			l.intensity = curve.Evaluate(x);//Mathf.Lerp(l.intensity, targetIntensity, fadeSpeed * Time.deltaTime);
+			l.intensity = highIntensity * curve.Evaluate(x);//Mathf.Lerp(l.intensity, targetIntensity, fadeSpeed * Time.deltaTime);
 			//CheckTargetIntensity();
 		}
 		else
 		{
-			l.intensity = Mathf.Lerp(l.intensity, 0f, fadeSpeed * Time.deltaTime);
+			l.intensity = 0f;
 		}
     }
 
-	void CheckTargetIntensity()
-	{
-		if (Mathf.Abs(targetIntensity - l.intensity) < changeMargin)
-		{
-			if (targetIntensity == highIntensity)
-			{
-				targetIntensity = lowIntensity;
-			}
-			else
-			{
-				targetIntensity = highIntensity;
-			}
-		}
-	}
+	//void CheckTargetIntensity()
+	//{
+	//	if (Mathf.Abs(targetIntensity - l.intensity) < changeMargin)
+	//	{
+	//		if (targetIntensity == highIntensity)
+	//		{
+	//			targetIntensity = lowIntensity;
+	//		}
+	//		else
+	//		{
+	//			targetIntensity = highIntensity;
+	//		}
+	//	}
+	//}
 }
