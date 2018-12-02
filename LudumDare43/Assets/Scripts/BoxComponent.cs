@@ -2,7 +2,7 @@
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent (typeof(Rigidbody))]
-public class BoxComponent : MonoBehaviour, IInteractable {
+public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
 
     public enum BoxSize { Small = 5, Medium = 10, Large = 20 };
 
@@ -91,5 +91,10 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     {
         aSource.clip = myProduct.shakeSound;
         aSource.Play();
+    }
+
+    public void OnKillVolumeEnter()
+    {
+        PlaneManager.Instance.BoxThrown(this);
     }
 }
