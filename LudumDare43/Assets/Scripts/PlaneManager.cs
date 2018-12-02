@@ -44,6 +44,8 @@ public class PlaneManager : MonoBehaviour
     private float angleAlarm;
     [SerializeField]
     private float timePerGame;
+    [SerializeField]
+    private Animator fadeOut;
 
     private float timePassed;
 
@@ -82,6 +84,11 @@ public class PlaneManager : MonoBehaviour
         timePassed = 0;
 
         gameOver = false;
+    }
+
+    private void ResetGame()
+    {
+        SceneManager.LoadScene("Main");
     }
 
     public void CalculateWeight()
@@ -152,7 +159,8 @@ public class PlaneManager : MonoBehaviour
 
             if (Vector3.Angle(Vector3.up, plane.transform.forward) >= angleLost)
             {
-                SceneManager.LoadScene("Main");
+                fadeOut.SetTrigger("FadeOut");
+                Invoke("ResetGame", 5f);
             }
 
             if (Vector3.Angle(Vector3.up, plane.transform.forward) >= angleAlarm && !moreThanXAngle)
@@ -176,7 +184,8 @@ public class PlaneManager : MonoBehaviour
                     timePassedInWeightProblem = 0;
                     timePassedSinceWeightProblem = 0;
                     weightProblem = false;
-                    SceneManager.LoadScene("Main");
+                    fadeOut.SetTrigger("FadeOut");
+                    Invoke("ResetGame", 5f);
                 }
             }
         }
