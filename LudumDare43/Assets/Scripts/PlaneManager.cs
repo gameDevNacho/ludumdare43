@@ -235,6 +235,7 @@ public class PlaneManager : MonoBehaviour
         if(weightExcess <= 0 && weightProblem)
         {
             weightProblem = false;
+            timePassedInWeightProblem = 0;
             timeForWeightProblem = Random.Range(minimumTimePerWeightProblem, maxSecondsPerWeightProblem);
 
             screenEvents.SetKGAlarm(ScreenEvents.State.Solution);
