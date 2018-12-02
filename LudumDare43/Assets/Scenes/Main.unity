@@ -582,14 +582,6 @@ Prefab:
       propertyPath: m_Name
       value: --PLANE--
       objectReference: {fileID: 0}
-    - target: {fileID: 4339860332945978, guid: 9f63291a9988f4f46ae9ebb6647b6676, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984413332963296, guid: 9f63291a9988f4f46ae9ebb6647b6676, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f63291a9988f4f46ae9ebb6647b6676, type: 2}
   m_IsPrefabAsset: 0
@@ -805,6 +797,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 0}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!124 &1452302138
 Behaviour:
   m_ObjectHideFlags: 0

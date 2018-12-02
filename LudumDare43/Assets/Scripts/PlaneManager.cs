@@ -175,6 +175,8 @@ public class PlaneManager : MonoBehaviour
 
         float angularSpeed = Mathf.Abs(maxRotationVelocity.angularVelocity * balancedWeight / maxRotationVelocity.weight);
 
+        Debug.Log(balancedWeight);
+
         plane.Rotate(plane.forward * angularSpeed * -Mathf.Sign(balancedWeight) * Time.deltaTime);
     }
 

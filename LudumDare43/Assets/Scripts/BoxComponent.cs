@@ -19,6 +19,8 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     [SerializeField]
     private MeshRenderer meshMaterial;
 
+    private const float FORCETHROW = 20f;
+
     private bool picked = false;
     private AudioSource aSource;
 
@@ -52,7 +54,7 @@ public class BoxComponent : MonoBehaviour, IInteractable {
     {
         picked = false;
         handler.SetGrabbedObject(null);
-        rigid.AddForce(handler.GetTransform().forward * 10, ForceMode.Impulse);
+        rigid.AddForce(handler.GetTransform().forward * FORCETHROW, ForceMode.Impulse);
         this.gameObject.layer = 11;
         PlayProductSound();
     }
