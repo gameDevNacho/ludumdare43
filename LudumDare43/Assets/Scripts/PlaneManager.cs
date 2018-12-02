@@ -119,13 +119,15 @@ public class PlaneManager : MonoBehaviour
             Debug.Log("Has Perdido");
         }
 
-        if(Vector3.Angle(Vector3.up, plane.transform.up) >= angleAlarm && !moreThanXAngle)
+        Debug.Log(Vector3.Angle(Vector3.up, plane.transform.forward));
+
+        if(Vector3.Angle(Vector3.up, plane.transform.forward) >= angleAlarm && !moreThanXAngle)
         {
             screenEvents.SetRotationAlarm(ScreenEvents.State.On);
             moreThanXAngle = true;
         }
 
-        else if(Vector3.Angle(Vector3.up, plane.transform.up) < angleAlarm && moreThanXAngle)
+        else if(Vector3.Angle(Vector3.up, plane.transform.forward) < angleAlarm && moreThanXAngle)
         {
             screenEvents.SetRotationAlarm(ScreenEvents.State.Solution);
             moreThanXAngle = false;
