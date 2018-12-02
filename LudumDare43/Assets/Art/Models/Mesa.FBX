@@ -11,10 +11,10 @@ FBXHeaderExtension:  {
 		Year: 2018
 		Month: 12
 		Day: 2
-		Hour: 0
-		Minute: 38
-		Second: 13
-		Millisecond: 999
+		Hour: 15
+		Minute: 49
+		Second: 57
+		Millisecond: 31
 	}
 	Creator: "FBX SDK/FBX Plugins version 2017.0.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -36,15 +36,15 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "3ds Max"
 			P: "Original|ApplicationVersion", "KString", "", "", "2017"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "01/12/2018 23:38:13.999"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "02/12/2018 14:49:57.028"
 			P: "Original|FileName", "KString", "", "", "C:\Users\INFINIGON2\Documents\GitHub\ludumdare43\LudumDare43\Assets\Art\Models\Mesa.FBX"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "3ds Max"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2017"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "01/12/2018 23:38:13.999"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "02/12/2018 14:49:57.028"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\INFINIGON2\Documents\3dsMax"
-			P: "Original|ApplicationNativeFile", "KString", "", "", "C:\Users\INFINIGON2\Documents\3dsMax\scenes\avion.max"
+			P: "Original|ApplicationNativeFile", "KString", "", "", "C:\Users\INFINIGON2\Desktop\avion.max"
 		}
 	}
 }
@@ -79,7 +79,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1682059392, "", "Scene" {
+	Document: 1121053280, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -302,7 +302,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 2042612064, "Geometry::", "Mesh" {
+	Geometry: 538379504, "Geometry::", "Mesh" {
 		Properties70:  {
 			P: "Color", "ColorRGB", "Color", "",0.529411764705882,0.231372549019608,0.0313725490196078
 		}
@@ -395,7 +395,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2789250672, "Model::Mesa", "Mesh" {
+	Model: 2035611552, "Model::Mesa", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "InheritType", "enum", "", "",1
@@ -414,7 +414,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2479610336, "Material::materialLudum", "" {
+	Material: 2335776880, "Material::materialLudum", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -436,7 +436,7 @@ Objects:  {
 			P: "Reflectivity", "double", "Number", "",0
 		}
 	}
-	Video: 2347615360, "Video::Map #1", "Clip" {
+	Video: 2518643136, "Video::Map #1", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\INFINIGON2\Documents\GitHub\ludumdare43\LudumDare43\Assets\Art\Texturas\materiaavion.png"
@@ -445,7 +445,7 @@ Objects:  {
 		Filename: "C:\Users\INFINIGON2\Documents\GitHub\ludumdare43\LudumDare43\Assets\Art\Texturas\materiaavion.png"
 		RelativeFilename: "..\Texturas\materiaavion.png"
 	}
-	Texture: 2479627136, "Texture::Map #1", "" {
+	Texture: 2335798480, "Texture::Map #1", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Map #1"
@@ -469,20 +469,20 @@ Objects:  {
 Connections:  {
 	
 	;Model::Mesa, Model::RootNode
-	C: "OO",2789250672,0
+	C: "OO",2035611552,0
 	
 	;AnimLayer::BaseLayer, AnimStack::Take 001
-	C: "OO",2800564880,2485368896
+	C: "OO",2042752960,2523891808
 	
 	;Geometry::, Model::Mesa
-	C: "OO",2042612064,2789250672
+	C: "OO",538379504,2035611552
 	
 	;Material::materialLudum, Model::Mesa
-	C: "OO",2479610336,2789250672
+	C: "OO",2335776880,2035611552
 	
 	;Texture::Map #1, Material::materialLudum
-	C: "OP",2479627136,2479610336, "DiffuseColor"
+	C: "OP",2335798480,2335776880, "DiffuseColor"
 	
 	;Video::Map #1, Texture::Map #1
-	C: "OO",2347615360,2479627136
+	C: "OO",2518643136,2335798480
 }
