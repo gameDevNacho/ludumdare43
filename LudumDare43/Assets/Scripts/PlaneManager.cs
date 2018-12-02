@@ -101,7 +101,24 @@ public class PlaneManager : MonoBehaviour
 
             if (timePassed >= timePerGame)
             {
+                List<Product> list = new List<Product>();
+
+                for (int i = 0; i < boxes.Count; i++)
+                {
+                    if(boxes[i].myProduct)
+                    {
+                        list.Add(boxes[i].myProduct);
+                    }
+
+                    else
+                    {
+                        Debug.Log("Checkea los productos pisha que hay alguno con producto nulo");
+                    }
+                }
+
+                Product_List_Manager.Instance.Initialize(list.ToArray());
                 gameOver = true;
+                return;
             }
 
             EvaluateWeights();
