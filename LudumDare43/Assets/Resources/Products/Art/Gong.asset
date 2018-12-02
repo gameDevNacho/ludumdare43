@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b149868bcb1c0a40a6a1da0ed37f98d, type: 3}
-  m_Name: penedediego
+  m_Name: Gong
   m_EditorClassIdentifier: 
-  nameText: asdf
-  price: 0
-  shakeSound: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  boxMesh: {fileID: 4300000, guid: d4df1e3187c36b04ab843bd4e3de4390, type: 3}
+  nameText: Gong
+  price: 10
+  shakeSound: {fileID: 8300000, guid: a27c280e38acffb44baab2601363eb19, type: 3}
+  boxMesh: {fileID: 0}
