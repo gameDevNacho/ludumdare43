@@ -61,7 +61,7 @@ public class Product_List_Manager : MonoBehaviour {
 
         totalText.text = total.ToString();
 
-        Invoke("Resetgame", 3f);
+        Invoke("Resetgame", 7f);
     }
 
     private void Resetgame()
