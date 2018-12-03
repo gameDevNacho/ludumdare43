@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class PauseMenu : MonoBehaviour {
 
     [SerializeField]
     FirstPersonController fps;
+    [SerializeField]
+    private AudioMixer audioMixer;
 
 	public GameObject pauseMenuUI;
 
@@ -37,6 +40,7 @@ public class PauseMenu : MonoBehaviour {
 		GamePaused = false;
         fps.ToggleLock();
         Debug.Log("hola");
+        audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("Snapshot") }, new float[1] { 1f }, 0f);
     }
 
 	public void Pause()
@@ -45,6 +49,7 @@ public class PauseMenu : MonoBehaviour {
 		Time.timeScale = 0f;
 		GamePaused = true;
         fps.ToggleLock();
+        audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("MuteEverythingButMusic") }, new float[1] { 1f }, 0f);
     }
 
 

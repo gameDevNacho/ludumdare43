@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 114968313751440866}
   - component: {fileID: 114090349566347144}
   - component: {fileID: 114963063049508696}
-  - component: {fileID: 114529357368170702}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -151,6 +150,7 @@ GameObject:
   - component: {fileID: 114665284271376042}
   - component: {fileID: 114416208719009196}
   - component: {fileID: 114521247592562604}
+  - component: {fileID: 114840220480815878}
   m_Layer: 5
   m_Name: Body
   m_TagString: Untagged
@@ -1131,21 +1131,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
---- !u!114 &114529357368170702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1094832258094458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2fdb18b572d2b24e97d247c3643bc46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRef: {fileID: 114814350354111164, guid: b388cd93c8a5f2c429a291e5615accfb, type: 2}
-  Albaran: {fileID: 1455472207313486}
-  products: []
-  totalText: {fileID: 114207500867041556}
 --- !u!114 &114567374642003506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1177,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.57254905}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1186,7 +1171,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1522,6 +1507,21 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &114840220480815878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324621996837474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fdb18b572d2b24e97d247c3643bc46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRef: {fileID: 114814350354111164, guid: b388cd93c8a5f2c429a291e5615accfb, type: 2}
+  Albaran: {fileID: 1455472207313486}
+  products: []
+  totalText: {fileID: 114207500867041556}
 --- !u!114 &114863682876955650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1616,6 +1616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fps: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 75c044f3863c66f45bf15b6dede29d2b, type: 2}
   pauseMenuUI: {fileID: 1753027491466548}
 --- !u!114 &114964953977558024
 MonoBehaviour:
@@ -1892,7 +1893,7 @@ RectTransform:
   m_GameObject: {fileID: 1084595404337322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_Children: []
   m_Father: {fileID: 224504617162517356}
   m_RootOrder: 0

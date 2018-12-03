@@ -159,6 +159,7 @@ public class PlaneManager : MonoBehaviour
 
                 albaran.SetActive(true);
                 Product_List_Manager.Instance.Initialize(list.ToArray());
+                audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("MuteEverythingButMusic") }, new float[1] { 1f }, 0f);
                 gameOver = true;
                 return;
             }
