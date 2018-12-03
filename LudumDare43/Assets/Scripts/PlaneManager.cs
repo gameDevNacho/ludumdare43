@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlaneManager : MonoBehaviour
 {
@@ -48,6 +49,12 @@ public class PlaneManager : MonoBehaviour
     private Animator fadeOut;
     [SerializeField]
     private LightSwitch lightSwitch;
+    [SerializeField]
+    private AudioClip planeCrash;
+    [SerializeField]
+    private AudioMixer audioMixer;
+    [SerializeField]
+    private AudioSource audioSource;
 
     private float timePassed;
 
@@ -86,6 +93,7 @@ public class PlaneManager : MonoBehaviour
         timePassed = 0;
 
         gameOver = false;
+        audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("Snapshot") }, new float[1] { 1f }, 0f);   
     }
 
     private void ResetGame()
@@ -166,6 +174,9 @@ public class PlaneManager : MonoBehaviour
             {
                 fadeOut.SetTrigger("FadeOut");
                 Invoke("ResetGame", 5f);
+                audioSource.clip = planeCrash;
+                audioSource.Play();
+                audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("MuteEverything") }, new float[1] { 1f }, 0f);
             }
 
             if (Vector3.Angle(Vector3.up, plane.transform.forward) >= angleAlarm && !moreThanXAngle)
@@ -191,6 +202,9 @@ public class PlaneManager : MonoBehaviour
                     weightProblem = false;
                     fadeOut.SetTrigger("FadeOut");
                     Invoke("ResetGame", 5f);
+                    audioSource.clip = planeCrash;
+                    audioSource.Play();
+                    audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("MuteEverything") }, new float[1] { 1f }, 0f);
                 }
             }
 
@@ -240,8 +254,6 @@ public class PlaneManager : MonoBehaviour
         boxes.Remove(box);
         weightExcess -= (float)box.mySize;
 
-        Debug.Log(weightExcess);
-
         if(weightExcess <= 0 && weightProblem)
         {
             weightProblem = false;
@@ -264,11 +276,13 @@ public class PlaneManager : MonoBehaviour
         if(wing == 0)
         {
             engineMalfunction += -(Random.Range(5f, 15f));
+            GameObject.Find("EngineRight").GetComponent<AudioSource>().Play();
         }
 
         else if(wing == 1)
         {
             engineMalfunction += Random.Range(5f, 15f);
+            GameObject.Find("EngineLeft").GetComponent<AudioSource>().Play();
         }
 
         timeForAngleProblem = Random.Range(minimumTimePerAngleProblem, maxSecondsPerAngleProblem);
