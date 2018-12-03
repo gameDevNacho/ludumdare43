@@ -81,6 +81,8 @@ public class PlaneManager : MonoBehaviour
 
     private bool gameOver;
 
+    public bool mainMenu;
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -97,19 +99,21 @@ public class PlaneManager : MonoBehaviour
         gameOver = false;
         audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("Snapshot") }, new float[1] { 1f }, 0f);
 
-        int sceneIndex = Random.Range(0, possibleScenes.Length);
+        if(!mainMenu){
+            int sceneIndex = Random.Range(0, possibleScenes.Length);
 
-        GameObject sceneSelected = Instantiate(possibleScenes[sceneIndex], plane);
-        sceneSelected.transform.localPosition = Vector3.zero;
+            GameObject sceneSelected = Instantiate(possibleScenes[sceneIndex], plane);
+            sceneSelected.transform.localPosition = Vector3.zero;
 
-        BoxComponent[] boxesComponents = sceneSelected.GetComponentsInChildren<BoxComponent>();
+            BoxComponent[] boxesComponents = sceneSelected.GetComponentsInChildren<BoxComponent>();
 
-        boxes.Clear();
+            boxes.Clear();
 
-        for (int i = 0; i < boxesComponents.Length; i++)
-        {
-            boxes.Add(boxesComponents[i]);
-            boxesComponents[i].parentTransform = plane;
+            for (int i = 0; i < boxesComponents.Length; i++)
+            {
+                boxes.Add(boxesComponents[i]);
+                boxesComponents[i].parentTransform = plane;
+            }
         }
     }
 
