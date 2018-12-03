@@ -3288,11 +3288,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2019238195}
     m_Modifications:
-    - target: {fileID: 111807378112248210, guid: daf2b007ebb03f746afefa2531703a6f,
-        type: 2}
-      propertyPath: m_Animations.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 224866776173905354, guid: daf2b007ebb03f746afefa2531703a6f,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -3382,26 +3377,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114984503032320754, guid: daf2b007ebb03f746afefa2531703a6f,
-        type: 2}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 111807378112248210, guid: daf2b007ebb03f746afefa2531703a6f,
-        type: 2}
-      propertyPath: m_Animations.Array.data[1]
-      value: 
-      objectReference: {fileID: 7400000, guid: f2364d1e9a3ccae469c94f2cf9b3491f, type: 2}
-    - target: {fileID: 114465133994290280, guid: daf2b007ebb03f746afefa2531703a6f,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 114719853959637832, guid: daf2b007ebb03f746afefa2531703a6f,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToInstructions
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf2b007ebb03f746afefa2531703a6f, type: 2}
@@ -4689,29 +4664,6 @@ RectTransform:
   m_AnchoredPosition: {x: 8.57, y: 0.99}
   m_SizeDelta: {x: 1099, y: 498}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2022306937 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1308503944818690, guid: daf2b007ebb03f746afefa2531703a6f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1412663207}
---- !u!95 &2022306938
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2022306937}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 550f21aa896b5ef4589f8a7dd400cb21, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2029985195
 GameObject:
   m_ObjectHideFlags: 0
