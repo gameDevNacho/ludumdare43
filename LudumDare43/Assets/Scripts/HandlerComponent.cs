@@ -93,8 +93,8 @@ public class HandlerComponent : MonoBehaviour {
             if (hit.transform.gameObject.GetComponent<IInteractable>() != null)
             {
                 hit.transform.gameObject.GetComponent<IInteractable>().Interact(this);
+                fpc.setSpeed(2.5f, 2.5f);
             }
-            fpc.setSpeed(2.5f, 2.5f);
         }
     }
 
