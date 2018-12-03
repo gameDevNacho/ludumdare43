@@ -37,7 +37,8 @@ public class CacaThrower : MonoBehaviour {
     private void LaunchObject()
     {
         index = Random.Range(0, cacas.Length);
-        current = Instantiate(cacas[index]);
+        current = Instantiate(cacas[index], this.transform);
+        current.transform.position = this.transform.position;
         current.GetComponent<BoxComponent>().AddSuccionAceleration();
     }
 }
