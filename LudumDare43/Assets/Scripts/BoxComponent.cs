@@ -11,7 +11,7 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
     public Product myProduct;
 
     [SerializeField]
-    private Transform parentTransform;
+    public Transform parentTransform;
     [SerializeField]
     private Material normalMaterial;
     [SerializeField]
