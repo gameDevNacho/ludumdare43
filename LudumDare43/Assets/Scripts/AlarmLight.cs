@@ -38,6 +38,21 @@ public class AlarmLight : MonoBehaviour {
 		}
     }
 
+    public void ToggleLight()
+    {
+        alarmOn = !alarmOn;
+    }
+
+    public void SwitchOn()
+    {
+        alarmOn = true;
+    }
+
+    public void SwitchOff()
+    {
+        alarmOn = false;
+    }
+
 	//void CheckTargetIntensity()
 	//{
 	//	if (Mathf.Abs(targetIntensity - l.intensity) < changeMargin)

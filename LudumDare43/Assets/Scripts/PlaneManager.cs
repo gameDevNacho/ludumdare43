@@ -46,6 +46,8 @@ public class PlaneManager : MonoBehaviour
     private float timePerGame;
     [SerializeField]
     private Animator fadeOut;
+    [SerializeField]
+    private LightSwitch lightSwitch;
 
     private float timePassed;
 
@@ -143,6 +145,7 @@ public class PlaneManager : MonoBehaviour
 
                     weightProblem = true;
 
+                    lightSwitch.SwitchOnLights();
                 }
             }
 
@@ -153,6 +156,8 @@ public class PlaneManager : MonoBehaviour
                 timePassedSinceAngleProblem = 0;
 
                 StartAngleProblem();
+
+                lightSwitch.SwitchOnLights();
             }
 
             RotatePlane();
@@ -187,6 +192,11 @@ public class PlaneManager : MonoBehaviour
                     fadeOut.SetTrigger("FadeOut");
                     Invoke("ResetGame", 5f);
                 }
+            }
+
+            if(!weightProblem && !moreThanXAngle)
+            {
+                lightSwitch.SwitchOffLights();
             }
         }
         
