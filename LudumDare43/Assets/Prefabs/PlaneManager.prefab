@@ -172,5 +172,6 @@ MonoBehaviour:
   audioSource: {fileID: 82548472099708398}
   possibleScenes:
   - {fileID: 1721317486299280, guid: 5e027a1d891284141b024fa2f4f2d4cf, type: 2}
+  - {fileID: 1721317486299280, guid: a615abc3e7b8a4b22a3bd3c7019729ba, type: 2}
   albaran: {fileID: 0}
   mainMenu: 0
