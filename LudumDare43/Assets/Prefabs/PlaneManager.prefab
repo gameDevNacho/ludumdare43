@@ -78,19 +78,29 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   plane: {fileID: 0}
   leftPoint: {fileID: 0}
   centerPoint: {fileID: 0}
   rightPoint: {fileID: 0}
   maxRotationVelocity:
     weight: 500
-    angularVelocity: 10
+    angularVelocity: 7
   maxSecondsPerWeightProblem: 30
   maxSecondsPerAngleProblem: 30
   minimumTimePerWeightProblem: 15
   minimumTimePerAngleProblem: 15
   timeWeightProblem: 20
-  angleLost: 30
+  angleLost: 25
   screenEvents: {fileID: 0}
   angleAlarm: 5
-  timePerGame: 0
+  timePerGame: 120
+  fadeOut: {fileID: 0}
+  lightSwitch: {fileID: 0}
