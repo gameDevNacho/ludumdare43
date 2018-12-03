@@ -289,7 +289,7 @@ public class PlaneManager : MonoBehaviour
 
     private void StartWeightProblem()
     {
-        weightExcess = Random.Range(10f, 30f);
+        weightExcess = Random.Range(5f, 20f);
         screenEvents.SetKGAlarm(ScreenEvents.State.On);
     }
 
