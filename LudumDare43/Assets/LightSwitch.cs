@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class LightSwitch : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    bool on = false;
+
+	public void ToggleLights()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetComponent<AlarmLight>().ToggleLight();
+        }
+    }
+
+    public void SwitchOnLights()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetComponent<AlarmLight>().SwitchOn();
+        }
+    }
+
+    public void SwitchOffLights()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetComponent<AlarmLight>().SwitchOff();
+        }
+    }
 }
