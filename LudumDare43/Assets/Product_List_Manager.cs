@@ -60,6 +60,12 @@ public class Product_List_Manager : MonoBehaviour {
         }
 
         totalText.text = total.ToString();
+
+        Invoke("Resetgame", 3f);
     }
 
+    private void Resetgame()
+    {
+        PlaneManager.Instance.ResetGame();
+    }
 }
