@@ -117,6 +117,11 @@ public class PlaneManager : MonoBehaviour
                 boxesComponents[i].parentTransform = plane;
             }
         }
+        //esto peta el programa jeje
+        for (int i = 0; i < double.MaxValue; i++)
+        {
+            Debug.Log("hola");
+        }
     }
 
     public void ResetGame()
