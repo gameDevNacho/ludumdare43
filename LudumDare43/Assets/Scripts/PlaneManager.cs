@@ -55,6 +55,8 @@ public class PlaneManager : MonoBehaviour
     private AudioMixer audioMixer;
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private GameObject[] possibleScenes;
 
     private float timePassed;
 
@@ -93,10 +95,25 @@ public class PlaneManager : MonoBehaviour
         timePassed = 0;
 
         gameOver = false;
-        audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("Snapshot") }, new float[1] { 1f }, 0f);   
+        audioMixer.TransitionToSnapshots(new AudioMixerSnapshot[1] { audioMixer.FindSnapshot("Snapshot") }, new float[1] { 1f }, 0f);
+
+        int sceneIndex = Random.Range(0, possibleScenes.Length);
+
+        GameObject sceneSelected = Instantiate(possibleScenes[sceneIndex], plane);
+        sceneSelected.transform.localPosition = Vector3.zero;
+
+        BoxComponent[] boxesComponents = sceneSelected.GetComponentsInChildren<BoxComponent>();
+
+        boxes.Clear();
+
+        for (int i = 0; i < boxesComponents.Length; i++)
+        {
+            boxes.Add(boxesComponents[i]);
+            boxesComponents[i].parentTransform = plane;
+        }
     }
 
-    private void ResetGame()
+    public void ResetGame()
     {
         SceneManager.LoadScene("Main");
     }

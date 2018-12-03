@@ -148,41 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935c66c76ff064b43b50cfc34d8f8122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  boxes: []
   plane: {fileID: 0}
   leftPoint: {fileID: 0}
   centerPoint: {fileID: 0}
@@ -204,3 +170,5 @@ MonoBehaviour:
   planeCrash: {fileID: 8300000, guid: acb2796bcd3bc7d4e85c02bce5a62dfe, type: 3}
   audioMixer: {fileID: 24100000, guid: 75c044f3863c66f45bf15b6dede29d2b, type: 2}
   audioSource: {fileID: 82548472099708398}
+  possibleScenes:
+  - {fileID: 1292998184910136, guid: 23ad64b68561abe4fbd5aef529674cfd, type: 2}
