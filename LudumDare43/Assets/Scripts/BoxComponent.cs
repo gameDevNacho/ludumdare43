@@ -68,10 +68,10 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
                 force = 3;
                 break;
             case BoxSize.Medium:
-                force = 1f;
+                force = 1.7f;
                 break;
             case BoxSize.Large:
-                force = 0.7f;
+                force = 1.3f;
                 break;
             default:
                 force = 1.00f;

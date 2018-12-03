@@ -7522,7 +7522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySize: 6
-  myProduct: {fileID: 0}
+  myProduct: {fileID: 11400000, guid: 466f71da567f1b74bb67a6d55b7d5ea5, type: 2}
   parentTransform: {fileID: 0}
   normalMaterial: {fileID: 2100000, guid: b1d0494d084e6a54097eb16aae9b38b8, type: 2}
   highlightedMaterial: {fileID: 2100000, guid: 49929ffc0a31b6f42b394afb94f6eaca, type: 2}
