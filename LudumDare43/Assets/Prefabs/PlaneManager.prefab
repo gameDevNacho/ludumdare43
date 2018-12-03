@@ -171,5 +171,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 75c044f3863c66f45bf15b6dede29d2b, type: 2}
   audioSource: {fileID: 82548472099708398}
   possibleScenes:
-  - {fileID: 1292998184910136, guid: 23ad64b68561abe4fbd5aef529674cfd, type: 2}
   - {fileID: 1721317486299280, guid: 5e027a1d891284141b024fa2f4f2d4cf, type: 2}
+  albaran: {fileID: 0}
+  mainMenu: 0

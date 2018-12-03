@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Product_List_Manager : MonoBehaviour {
 
@@ -15,9 +16,12 @@ public class Product_List_Manager : MonoBehaviour {
 
 	private Dictionary<Product, int> productQuantity;
 
+    [SerializeField]
+    private Text totalText;
+
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
@@ -43,6 +47,8 @@ public class Product_List_Manager : MonoBehaviour {
             }
         }
 
+        int total = 0;
+
         foreach (KeyValuePair<Product, int> item in productQuantity)
         {
             Product_List_Node tempRef = Instantiate(nodeRef, this.transform);
@@ -50,7 +56,10 @@ public class Product_List_Manager : MonoBehaviour {
             tempRef.setAmountText(item.Value.ToString());
             tempRef.setPriceText(item.Key.price.ToString());
             tempRef.setTotalPriceText((item.Key.price * item.Value).ToString());
+            total += item.Key.price * item.Value;
         }
+
+        totalText.text = total.ToString();
     }
 
 }

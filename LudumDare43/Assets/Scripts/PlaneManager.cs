@@ -57,6 +57,8 @@ public class PlaneManager : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private GameObject[] possibleScenes;
+    [SerializeField]
+    private GameObject albaran;
 
     private float timePassed;
 
@@ -155,6 +157,7 @@ public class PlaneManager : MonoBehaviour
                     }
                 }
 
+                albaran.SetActive(true);
                 Product_List_Manager.Instance.Initialize(list.ToArray());
                 gameOver = true;
                 return;
