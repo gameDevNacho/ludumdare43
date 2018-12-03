@@ -244,7 +244,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+            if(m_MouseLook.lockCursor == true)
             m_MouseLook.LookRotation (transform, m_Camera.transform);
+        }
+
+        public void ToggleLock()
+        {
+            m_MouseLook.SetCursorLock(!m_MouseLook.lockCursor);
         }
 
 

@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PauseMenu : MonoBehaviour {
 
 	public static bool GamePaused = false;
 
+    [SerializeField]
+    FirstPersonController fps;
+
 	public GameObject pauseMenuUI;
 
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetKeyDown(KeyCode.P))
 		{
 			if (GamePaused)
 			{
@@ -30,15 +34,17 @@ public class PauseMenu : MonoBehaviour {
 		pauseMenuUI.SetActive(false);
 		Time.timeScale = 1f;
 		GamePaused = false;
-
-	}
+        fps.ToggleLock();
+        Debug.Log("hola");
+    }
 
 	public void Pause()
 	{
 		pauseMenuUI.SetActive(true);
 		Time.timeScale = 0f;
 		GamePaused = true;
-	}
+        fps.ToggleLock();
+    }
 
 
 	public void Quit()
