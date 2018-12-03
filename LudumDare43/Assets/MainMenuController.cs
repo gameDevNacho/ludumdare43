@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
 
     Animator anim;
+    public string gameScene;
 
     private void Awake()
     {
@@ -21,8 +23,14 @@ public class MainMenuController : MonoBehaviour {
         Application.Quit();
     }
 
-    public void ToInstructions()
+    public void SwitchInstructions()
     {
-        anim.Play("anim_MainMenu_Slide");
+        anim.SetBool("Instructions", !anim.GetBool("Instructions"));
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadSceneAsync(gameScene);
+    }
+   
 }
