@@ -2771,7 +2771,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924055629727278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1750107, y: -8.511599, z: -0.5638199}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4654878464520326}
@@ -10127,6 +10127,9 @@ MonoBehaviour:
   timePerGame: 120
   fadeOut: {fileID: 0}
   lightSwitch: {fileID: 0}
+  planeCrash: {fileID: 0}
+  audioMixer: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &114506415969544308
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -19,7 +19,7 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
     [SerializeField]
     private MeshRenderer meshMaterial;
 
-    private const float FORCETHROW = 20f;
+    private const float FORCETHROW = 5f;
 
     private bool picked = false;
     private bool sucked = false;
@@ -50,7 +50,7 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
         if(!picked && parentTransform != null)
             rigid.AddForce(parentTransform.right * 10f * -parentTransform.right.y, ForceMode.Force);
 
-        if(sucked)
+        if(sucked && !picked)
         {
             rigid.AddForce(Vector3.forward * suckForce, ForceMode.Acceleration);
             rigid.AddTorque(Vector3.right * suckForce);
@@ -61,7 +61,23 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
     {
         picked = false;
         handler.SetGrabbedObject(null);
-        rigid.AddForce(handler.GetTransform().forward * FORCETHROW, ForceMode.Impulse);
+        float force;
+        switch (mySize)
+        {
+            case BoxSize.Small:
+                force = 3;
+                break;
+            case BoxSize.Medium:
+                force = 1f;
+                break;
+            case BoxSize.Large:
+                force = 0.7f;
+                break;
+            default:
+                force = 1.00f;
+                break;
+        }
+        rigid.AddForce(handler.GetTransform().forward * FORCETHROW * force, ForceMode.VelocityChange);
         this.gameObject.layer = 11;
         PlayProductSound();
     }
@@ -70,7 +86,7 @@ public class BoxComponent : MonoBehaviour, IInteractable, IKvolume {
     {
         picked = true;
         this.gameObject.layer = 9;
-        this.transform.SetPositionAndRotation(handler.GetTransform().position, handler.GetTransform().rotation);
+        this.transform.position = handler.GetTransform().position;
         handler.SetGrabbedObject(this);
         PlayProductSound();
     }

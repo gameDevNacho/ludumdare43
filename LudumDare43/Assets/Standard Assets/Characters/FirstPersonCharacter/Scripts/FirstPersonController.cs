@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 

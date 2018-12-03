@@ -222,6 +222,10 @@ Prefab:
       propertyPath: volumeTrigger
       value: 
       objectReference: {fileID: 422015666}
+    - target: {fileID: 4482019573132478, guid: be61dc244ff22e54996a1160637dbac4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.932
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be61dc244ff22e54996a1160637dbac4, type: 2}
   m_IsPrefabAsset: 0
