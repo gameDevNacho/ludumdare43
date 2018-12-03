@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114546465860702192}
   - component: {fileID: 65391215730268990}
   m_Layer: 11
-  m_Name: "CajaPeque\xF1aRig"
+  m_Name: "CajaPequen\u0303aRig"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

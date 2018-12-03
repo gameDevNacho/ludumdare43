@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114379712033703478}
   - component: {fileID: 65718289352595882}
   m_Layer: 11
-  m_Name: "CajaPeque\xF1a9Rig"
+  m_Name: "CajaPequen\u0303a9Rig"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
