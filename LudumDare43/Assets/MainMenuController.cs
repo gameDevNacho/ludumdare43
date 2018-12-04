@@ -28,6 +28,11 @@ public class MainMenuController : MonoBehaviour {
         anim.SetBool("Instructions", !anim.GetBool("Instructions"));
     }
 
+    public void SwitchCredits()
+    {
+        anim.SetBool("Credits", !anim.GetBool("Credits"));
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(gameScene);
