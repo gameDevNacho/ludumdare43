@@ -121,6 +121,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114301252389126770, guid: 3c034352016d89e4e9fed2af2b6e5fdb,
+        type: 2}
+      propertyPath: possibleScenes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4790640111135124, guid: 3c034352016d89e4e9fed2af2b6e5fdb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -151,6 +156,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4790640111135124, guid: 3c034352016d89e4e9fed2af2b6e5fdb, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224653211123711932, guid: 3c034352016d89e4e9fed2af2b6e5fdb,
+        type: 2}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
